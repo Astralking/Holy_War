@@ -1,0 +1,26 @@
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\Holy War.exe
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\Holy War.pdb
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\MonoGame.Framework.dll
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.dll
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\Lidgren.Network.dll
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.XInput.dll
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.xml
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.XInput.xml
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\MyStuff\Personal Projects\Holy War\Holy War\obj\x86\Debug\Holy War.csprojResolveAssemblyReference.cache
+C:\MyStuff\Personal Projects\Holy War\Holy War\obj\x86\Debug\Holy War.exe
+C:\MyStuff\Personal Projects\Holy War\Holy War\obj\x86\Debug\Holy War.pdb
+C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\Content\GrassTile.png
