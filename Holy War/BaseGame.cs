@@ -1,6 +1,8 @@
 ﻿#region Using Statements
 using System;
 using System.Collections.Generic;
+using Holy_War.Actors;
+using Holy_War.Tiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -17,14 +19,16 @@ namespace Holy_War
 	{
 		GraphicsDeviceManager _graphics;
 		SpriteBatch _spriteBatch;
-		InGameInputHandler _inputHandler = new InGameInputHandler();
+	    private InGameInputHandler _inputHandler;
 		Map _map = new Maps.Map(10, 10);
+	    UserActor _selectedUserActor;
+	    Tile _highlightedTile;          
 
-		public MainGame()
-			: base()
+		public MainGame() : base()
 		{
-			_graphics = new GraphicsDeviceManager(this);
-			Content.RootDirectory = "Content";
+			_graphics = new GraphicsDeviceManager(this) {PreferredBackBufferHeight = 640, PreferredBackBufferWidth = 640};
+
+		    Content.RootDirectory = "Content";
 		}
 
 		/// <summary>
@@ -48,6 +52,8 @@ namespace Holy_War
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			_spriteBatch = new SpriteBatch(GraphicsDevice);
+            _inputHandler = new InGameInputHandler(_spriteBatch, Content);
+
 			_map.PopulateMap(Content);
 			// TODO: IMPLEMENT PROPER CONTENT MANAGER
 		}
@@ -68,10 +74,11 @@ namespace Holy_War
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Update(GameTime gameTime)
 		{
-			IInputCommand command = _inputHandler.HandleInput();
+		    //_inputHandler.UpdateSelection();
+			IInputCommand command = _inputHandler.HandleActionInput();
 
 			if (command != null)
-				command.Execute();
+				command.Execute(_selectedUserActor);
 
 			base.Update(gameTime);
 		}
@@ -83,29 +90,13 @@ namespace Holy_War
 		protected override void Draw(GameTime gameTime)
 		{
 			GraphicsDevice.Clear(Color.CornflowerBlue);
-			const int tileHeightConstant = 64;
-			const int tileWidthConstant = 64;
 
-			_spriteBatch.Begin();
+			_spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
 
-			int x = 0, y = 0;
-
-			for (int i = 0; i < _map.Width; i++)
-			{
-				for (int j = 0; j < _map.Height; j++)
-				{
-					var tile = _map.MapArray[i, j];
-
-					_spriteBatch.Draw(_map.MapArray[i, j].Texture, new Rectangle(x, y, tile.Width, tile.Height), Color.White);
-					y += tileHeightConstant;
-				}
-
-				x += tileWidthConstant;
-				y = 0;
-			}
+		    //_map.Draw(_spriteBatch);
+		    _inputHandler.DrawSelection(_spriteBatch);
+      	
 			_spriteBatch.End();
-
-			// TODO: Add your drawing code here
 
 			base.Draw(gameTime);
 		}

@@ -24,3 +24,30 @@ C:\MyStuff\Personal Projects\Holy War\Holy War\obj\x86\Debug\Holy War.csprojReso
 C:\MyStuff\Personal Projects\Holy War\Holy War\obj\x86\Debug\Holy War.exe
 C:\MyStuff\Personal Projects\Holy War\Holy War\obj\x86\Debug\Holy War.pdb
 C:\MyStuff\Personal Projects\Holy War\Holy War\bin\Windows\Debug\Content\GrassTile.png
+C:\Holy War\Holy War\obj\x86\Debug\Holy War.exe
+C:\Holy War\Holy War\obj\x86\Debug\Holy War.pdb
+C:\Holy War\Holy War\bin\Windows\Debug\Content\GrassTile.png
+C:\Holy War\Holy War\bin\Windows\Debug\Holy War.exe
+C:\Holy War\Holy War\bin\Windows\Debug\Holy War.pdb
+C:\Holy War\Holy War\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.dll
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Holy War\Holy War\bin\Windows\Debug\Lidgren.Network.dll
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.xml
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Holy War\Holy War\obj\x86\Debug\Holy War.csprojResolveAssemblyReference.cache
+C:\Holy War\Holy War\bin\Windows\Debug\Content\BlankActor.png

@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework.Input;
+﻿using Holy_War.Actors;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,29 +9,32 @@ namespace Holy_War.Input
 {
 	public class InputHandler
 	{
-		internal readonly IInputCommand _up;
-		internal readonly IInputCommand _down;
-		internal readonly IInputCommand _left;
-		internal readonly IInputCommand _right;
+		internal IInputCommand _up;
+		internal IInputCommand _down;
+		internal IInputCommand _left;
+		internal IInputCommand _right;
 
-		internal readonly IInputCommand _action;
-		internal readonly IInputCommand _back;
-		internal readonly IInputCommand _menu;
+		internal IInputCommand _action;
+		internal IInputCommand _back;
+		internal IInputCommand _menu;
 
-		KeyboardState _previousKeyboardState;
-		KeyboardState _currentKeyboardState;
+		private KeyboardState _previousKeyboardState;
+		private KeyboardState _currentKeyboardState;
+
+	    private MouseState _previousMouseState;
+        private MouseState _currentMouseState;
 
 		#region Key Constants
-			const Keys UP_BUTTON = Keys.Up;
-			const Keys DOWN_BUTTON = Keys.Down;
-			const Keys LEFT_BUTTON = Keys.Left;
-			const Keys RIGHT_BUTTON = Keys.Right;
-			const Keys ACTION_BUTTON = Keys.Enter;
-			const Keys BACK_BUTTON = Keys.Back;
-			const Keys MENU_BUTTON = Keys.Escape;
+			internal const Keys UP_BUTTON = Keys.Up;
+            internal const Keys DOWN_BUTTON = Keys.Down;
+            internal const Keys LEFT_BUTTON = Keys.Left;
+            internal const Keys RIGHT_BUTTON = Keys.Right;
+            internal const Keys ACTION_BUTTON = Keys.Enter;
+            internal const Keys BACK_BUTTON = Keys.Back;
+            internal const Keys MENU_BUTTON = Keys.Escape;
 		#endregion
 
-		public IInputCommand HandleInput()
+		public IInputCommand HandleActionInput()
 		{
 			_currentKeyboardState = Keyboard.GetState();
 

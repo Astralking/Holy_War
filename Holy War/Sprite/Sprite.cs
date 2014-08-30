@@ -13,5 +13,10 @@ namespace Holy_War.Sprite
 
 		public Texture2D Texture { get; private set; }
 		public Layer Layer { get; private set; }
+
+	    public static float LayerToFloat(Layer layer)
+	    {
+	        return (float) layer*0.1f;
+	    }
 	}
 }
