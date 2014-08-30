@@ -17,12 +17,12 @@ namespace Holy_War
 	/// </summary>
 	public class MainGame : Game
 	{
-		GraphicsDeviceManager _graphics;
+        public static Map CurrentMap = new Maps.Map(10, 10);
+	    public static UserActor SelectedUserActor { get; private set; }
+
+	    GraphicsDeviceManager _graphics;
 		SpriteBatch _spriteBatch;
-	    private InGameInputHandler _inputHandler;
-		Map _map = new Maps.Map(10, 10);
-	    UserActor _selectedUserActor;
-	    Tile _highlightedTile;          
+	    InGameInputHandler _inputHandler;      
 
 		public MainGame() : base()
 		{
@@ -52,10 +52,9 @@ namespace Holy_War
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			_spriteBatch = new SpriteBatch(GraphicsDevice);
-            _inputHandler = new InGameInputHandler(_spriteBatch, Content);
+            _inputHandler = new InGameInputHandler(Content);
 
-			_map.PopulateMap(Content);
-			// TODO: IMPLEMENT PROPER CONTENT MANAGER
+            CurrentMap.InitialiseMap(Content);
 		}
 
 		/// <summary>
@@ -74,11 +73,15 @@ namespace Holy_War
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Update(GameTime gameTime)
 		{
-		    //_inputHandler.UpdateSelection();
-			IInputCommand command = _inputHandler.HandleActionInput();
+            if (SelectedUserActor == null)
+                SelectedUserActor = CurrentMap.SelectionBox;
+
+            var command = _inputHandler.HandleInput(gameTime);
 
 			if (command != null)
-				command.Execute(_selectedUserActor);
+                command.Execute(SelectedUserActor);
+
+		    CurrentMap.Update();
 
 			base.Update(gameTime);
 		}
@@ -93,12 +96,24 @@ namespace Holy_War
 
 			_spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
 
-		    //_map.Draw(_spriteBatch);
-		    _inputHandler.DrawSelection(_spriteBatch);
+            CurrentMap.Draw(_spriteBatch);
       	
 			_spriteBatch.End();
 
 			base.Draw(gameTime);
 		}
+
+	    public static void SelectActor(Point location)
+	    {
+	        var selectedActor = CurrentMap.ActorMapArray[location.X, location.Y] as UserActor;
+
+	        if (selectedActor != null)
+                SelectedUserActor = selectedActor;
+	    }
+
+        public static void SelectSelectionBox()
+        {
+            SelectedUserActor = CurrentMap.SelectionBox;
+        }
 	}
 }

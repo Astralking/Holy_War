@@ -1,4 +1,6 @@
 ﻿using Holy_War.Actors;
+using Holy_War.Enumerations;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
@@ -9,6 +11,10 @@ namespace Holy_War.Input
 {
 	public class InputHandler
 	{
+        public static Device ActiveDevice { get { return Device.Keyboard; } }
+        public static MouseState CurrentMouseState { get { return Mouse.GetState(); } }
+        public static KeyboardState CurrentKeyboardState { get { return Keyboard.GetState(); } }
+
 		internal IInputCommand _up;
 		internal IInputCommand _down;
 		internal IInputCommand _left;
@@ -18,11 +24,11 @@ namespace Holy_War.Input
 		internal IInputCommand _back;
 		internal IInputCommand _menu;
 
-		private KeyboardState _previousKeyboardState;
-		private KeyboardState _currentKeyboardState;
+		internal KeyboardState _previousKeyboardState;
+        internal KeyboardState _currentKeyboardState;
 
-	    private MouseState _previousMouseState;
-        private MouseState _currentMouseState;
+        internal MouseState _previousMouseState;
+        internal MouseState _currentMouseState;
 
 		#region Key Constants
 			internal const Keys UP_BUTTON = Keys.Up;
@@ -33,32 +39,36 @@ namespace Holy_War.Input
             internal const Keys BACK_BUTTON = Keys.Back;
             internal const Keys MENU_BUTTON = Keys.Escape;
 		#endregion
+    
+	    public IInputCommand HandleInput(GameTime gameTime)
+	    {
+            _previousKeyboardState = _currentKeyboardState;
+            _previousMouseState = _currentMouseState;
 
-		public IInputCommand HandleActionInput()
-		{
-			_currentKeyboardState = Keyboard.GetState();
+	        _currentKeyboardState = CurrentKeyboardState;
+	        _currentMouseState = CurrentMouseState;
 
-			if (isPressed(UP_BUTTON))
+			if (IsPressed(UP_BUTTON))
 				return _up;
-			if (isPressed(DOWN_BUTTON))
+			if (IsPressed(DOWN_BUTTON))
 				return _down;
-			if (isPressed(LEFT_BUTTON))
+			if (IsPressed(LEFT_BUTTON))
 				return _left;
-			if (isPressed(RIGHT_BUTTON))
+			if (IsPressed(RIGHT_BUTTON))
 				return _right;
-			if (isPressed(ACTION_BUTTON))
+			if (IsPressed(ACTION_BUTTON))
 				return _action;
-			if (isPressed(BACK_BUTTON))
+			if (IsPressed(BACK_BUTTON))
 				return _back;
-			if (isPressed(MENU_BUTTON))
+			if (IsPressed(MENU_BUTTON))
 				return _menu;
 
 			return null; 
 		}
 
-		private bool isPressed(Keys key)
+		private bool IsPressed(Keys key)
 		{
-			return _currentKeyboardState.IsKeyDown(key);
+            return _currentKeyboardState.IsKeyDown(key) && _previousKeyboardState.IsKeyUp(key);
 		}
 	}
 }

@@ -5,12 +5,13 @@ using System.Text;
 using Holy_War.Actors;
 using Holy_War.Enumerations;
 using Holy_War.Helpers;
+using Holy_War.Sprite;
 
 namespace Holy_War.Input.Commands
 {
     internal class MoveCommand : IInputCommand
     {
-        private Orientation _orientation;
+        private readonly Orientation _orientation;
 
         public MoveCommand(Orientation orientation)
         {
@@ -19,14 +20,12 @@ namespace Holy_War.Input.Commands
 
         public void Execute(UserActor userActor)
         {
-            Move(userActor);
-        }
+            if (userActor != null)
+            {
+                var direction = Converter.OrientationToDirection(_orientation);
 
-        public void Move(UserActor userActor)
-        {
-            var direction = DirectionConverter.OrientationToDirection(_orientation);
-
-            userActor.Move(direction);
+                userActor.Move(direction);
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Holy_War.Actors.Stats;
 using Holy_War.Tiles;
 using Holy_War.Enumerations;
 
@@ -7,23 +8,23 @@ namespace Holy_War.Actors
 {
 	public abstract class Actor : Tile, IActor
 	{
-		protected Actor(Texture2D texture, Point location)
-            : base(texture, location, Layer.Actor)
+	    public ActorStats Stats { get; private set; }
+
+		protected Actor(Texture2D texture, Point location, Layer layer, ActorStats stats)
+            : base(texture, location, layer)
 		{
-        }
+		    Stats = stats;
+		}
 
 		public virtual void Action()
 		{
-			throw new System.NotImplementedException();
 		}
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            var locationInPixels = GetLocationInPixels(Location);
-
             spriteBatch.Draw(
                 base.Texture, 
-                locationInPixels, 
+                new Vector2(Location.X, Location.Y), 
                 null, 
                 Color.White, 
                 0f, 

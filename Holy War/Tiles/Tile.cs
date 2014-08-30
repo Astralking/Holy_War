@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Holy_War.Helpers;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Holy_War.Enumerations;
 
@@ -14,7 +15,14 @@ namespace Holy_War.Tiles
 	    public Point Location
 	    {
 	        get { return _location; }
-	        set { _location = value; }
+	        set
+	        {
+                if (value.X >= 0
+                    && value.Y >= 0
+                    && value.X < Converter.TileWidthToPixels(MainGame.CurrentMap.WidthInTiles)
+                    && value.Y < Converter.TileWidthToPixels(MainGame.CurrentMap.WidthInTiles))
+	            _location = value;
+	        }
 	    }
 
 	    public int Height { get { return _defaultHeight; } }
