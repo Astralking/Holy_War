@@ -9,22 +9,27 @@ namespace Holy_War.Actors
 	public abstract class Actor : Tile, IActor
 	{
 	    public ActorStats Stats { get; private set; }
+        public Point StartingPosition { get; private set; }
 
 		protected Actor(Texture2D texture, Point location, Layer layer, ActorStats stats)
             : base(texture, location, layer)
 		{
 		    Stats = stats;
+		    StartingPosition = location;
 		}
 
 		public virtual void Action()
 		{
+            StartingPosition = ScreenLocation;
 		}
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            var locationInPixels = GetLocationInPixels(ScreenLocation);
+
             spriteBatch.Draw(
-                base.Texture, 
-                new Vector2(Location.X, Location.Y), 
+                base.Texture,
+                locationInPixels, 
                 null, 
                 Color.White, 
                 0f, 
@@ -34,7 +39,7 @@ namespace Holy_War.Actors
                 LayerToFloat(Layer));
         }
 
-	    public virtual void Move(Point direction)
+	    public virtual void Move(Point direction, GameTime gameTime)
 	    {
 
 	    }

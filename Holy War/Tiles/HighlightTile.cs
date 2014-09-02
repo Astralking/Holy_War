@@ -15,9 +15,21 @@ namespace Holy_War.Tiles
         {
         }
 
+
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(base.Texture, new Vector2(Location.X, Location.Y), null, Color.White, 0f, new Vector2(0, 0), 1f, SpriteEffects.None, LayerToFloat(Layer));
+            var locationInPixels = GetLocationInPixels(ScreenLocation);
+
+            spriteBatch.Draw(
+                base.Texture, 
+                locationInPixels, 
+                null,
+                Color.White, 
+                0f, 
+                new Vector2(0, 0), 
+                1f, 
+                SpriteEffects.None, 
+                LayerToFloat(Layer));
         }
     }
 }

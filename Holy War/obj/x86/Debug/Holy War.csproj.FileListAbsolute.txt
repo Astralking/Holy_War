@@ -51,5 +51,6 @@ C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.RawInput.xml
 C:\Holy War\Holy War\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Holy War\Holy War\obj\x86\Debug\Holy War.csprojResolveAssemblyReference.cache
 C:\Holy War\Holy War\bin\Windows\Debug\Content\BlankActor.png
-C:\Holy War\Holy War\bin\Windows\Debug\Content\SelectionBox.png
-C:\Holy War\Holy War\bin\Windows\Debug\Content\HighlightBox.png
+C:\Holy War\Holy War\bin\Windows\Debug\Content\Boxes\SelectionBox.png
+C:\Holy War\Holy War\bin\Windows\Debug\Content\Boxes\BlueHighlightBox.png
+C:\Holy War\Holy War\bin\Windows\Debug\Content\Boxes\RedHighlightBox.png

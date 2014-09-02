@@ -2,11 +2,13 @@
 using System;
 using System.Collections.Generic;
 using Holy_War.Actors;
+using Holy_War.Actors.UserActors;
+using Holy_War.Managers;
 using Holy_War.Tiles;
+using Holy_War.Worlds;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using Holy_War.Maps;
 using Holy_War.Input;
 #endregion
 
@@ -17,12 +19,10 @@ namespace Holy_War
 	/// </summary>
 	public class MainGame : Game
 	{
-        public static Map CurrentMap = new Maps.Map(10, 10);
-	    public static UserActor SelectedUserActor { get; private set; }
-
-	    GraphicsDeviceManager _graphics;
-		SpriteBatch _spriteBatch;
-	    InGameInputHandler _inputHandler;      
+	    public static World CurrentWorld;
+	    private GraphicsDeviceManager _graphics;
+		private SpriteBatch _spriteBatch;
+	    private InGameInputHandler _inputHandler;      
 
 		public MainGame() : base()
 		{
@@ -39,7 +39,20 @@ namespace Holy_War
 		/// </summary>
 		protected override void Initialize()
 		{
-			// TODO: Add your initialization logic here
+		    this.IsFixedTimeStep = true;
+
+		    var textureList = new List<string>
+		    {
+                "GrassTile",
+                "BlankActor",
+		        "Boxes/SelectionBox",
+		        "Boxes/RedHighlightBox",
+		        "Boxes/BlueHighlightBox"
+		    };
+
+            CurrentWorld = new World(10, 10, textureList);
+
+            TextureManager.InitialiseTextures(CurrentWorld, Content);
 
 			base.Initialize();
 		}
@@ -54,7 +67,7 @@ namespace Holy_War
 			_spriteBatch = new SpriteBatch(GraphicsDevice);
             _inputHandler = new InGameInputHandler(Content);
 
-            CurrentMap.InitialiseMap(Content);
+            CurrentWorld.InitialiseMap();
 		}
 
 		/// <summary>
@@ -63,7 +76,6 @@ namespace Holy_War
 		/// </summary>
 		protected override void UnloadContent()
 		{
-			// TODO: Unload any non ContentManager content here
 		}
 
 		/// <summary>
@@ -73,15 +85,12 @@ namespace Holy_War
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Update(GameTime gameTime)
 		{
-            if (SelectedUserActor == null)
-                SelectedUserActor = CurrentMap.SelectionBox;
-
             var command = _inputHandler.HandleInput(gameTime);
 
 			if (command != null)
-                command.Execute(SelectedUserActor);
+                command.Execute(CurrentWorld.SelectedUserActor, gameTime);
 
-		    CurrentMap.Update();
+            CurrentWorld.Update();
 
 			base.Update(gameTime);
 		}
@@ -91,29 +100,16 @@ namespace Holy_War
 		/// </summary>
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw(GameTime gameTime)
-		{
-			GraphicsDevice.Clear(Color.CornflowerBlue);
-
+		{		
 			_spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
 
-            CurrentMap.Draw(_spriteBatch);
-      	
+            CurrentWorld.Draw(_spriteBatch);
+      	    
 			_spriteBatch.End();
 
 			base.Draw(gameTime);
 		}
 
-	    public static void SelectActor(Point location)
-	    {
-	        var selectedActor = CurrentMap.ActorMapArray[location.X, location.Y] as UserActor;
-
-	        if (selectedActor != null)
-                SelectedUserActor = selectedActor;
-	    }
-
-        public static void SelectSelectionBox()
-        {
-            SelectedUserActor = CurrentMap.SelectionBox;
-        }
+	    
 	}
 }

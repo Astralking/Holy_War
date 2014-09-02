@@ -50,33 +50,41 @@
     <Compile Include="Input\IInputCommand.cs" />
     <Compile Include="Input\InGameInputHandler.cs" />
     <Compile Include="Input\InputHandler.cs" />
-    <Compile Include="Maps\Map.cs" />
+    <Compile Include="Worlds\World.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Actors\UserActors\SelectionBoxActor.cs" />
     <Compile Include="Sprite\Sprite.cs" />
+    <Compile Include="Managers\TextureManager.cs" />
     <Compile Include="Tiles\HighlightTile.cs" />
     <Compile Include="Tiles\Terrain\Grassland.cs" />
     <Compile Include="Tiles\Tile.cs" />
+    <Compile Include="Zones\IZone.cs" />
+    <Compile Include="Zones\MovementZone.cs" />
+    <Compile Include="Zones\Zone.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
       <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\BlankActor.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Boxes\BlueHighlightBox.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Boxes\RedHighlightBox.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\GrassTile.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\HighlightBox.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\SelectionBox.png">
+    <Content Include="Content\Boxes\SelectionBox.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Icon.ico" />

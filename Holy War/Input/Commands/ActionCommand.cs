@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Holy_War.Actors;
+using Holy_War.Actors.UserActors;
+using Microsoft.Xna.Framework;
 
 namespace Holy_War.Input.Commands
 {
@@ -13,14 +15,14 @@ namespace Holy_War.Input.Commands
             userActor.Action(userActor);
         }
 
-        public void Execute(UserActor userActor)
+        public void Execute(UserActor userActor, GameTime gameTime)
         {
             var selectionBox = userActor as SelectionBoxActor;
 
             if(selectionBox != null)
                 Execute(selectionBox);
             else
-                userActor.Action(userActor);
+            userActor.Action(userActor);
         }
     }
 }

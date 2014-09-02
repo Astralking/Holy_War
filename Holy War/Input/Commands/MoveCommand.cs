@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Holy_War.Actors;
+using Holy_War.Actors.UserActors;
 using Holy_War.Enumerations;
 using Holy_War.Helpers;
 using Holy_War.Sprite;
+using Microsoft.Xna.Framework;
 
 namespace Holy_War.Input.Commands
 {
@@ -18,13 +20,13 @@ namespace Holy_War.Input.Commands
             _orientation = orientation;
         }
 
-        public void Execute(UserActor userActor)
+        public void Execute(UserActor userActor, GameTime gameTime)
         {
             if (userActor != null)
             {
                 var direction = Converter.OrientationToDirection(_orientation);
 
-                userActor.Move(direction);
+                userActor.Move(direction, gameTime);
             }
         }
     }

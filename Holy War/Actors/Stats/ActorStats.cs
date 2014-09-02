@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Holy_War.Zones;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Holy_War.Actors.Stats
 {
@@ -9,7 +8,7 @@ namespace Holy_War.Actors.Stats
     {
         public int Movement { get; private set; }
 
-        public ActorStats(int movement)
+        public ActorStats(ContentManager contentManager, int movement)
         {
             Movement = movement;
         }
