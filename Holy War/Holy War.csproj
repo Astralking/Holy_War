@@ -39,6 +39,7 @@
     <Compile Include="Actors\Stats\ActorStats.cs" />
     <Compile Include="Actors\UserActors\UserActor.cs" />
     <Compile Include="Actors\IActor.cs" />
+    <Compile Include="Camera.cs" />
     <Compile Include="Enumerations\Device.cs" />
     <Compile Include="Input\Commands\ActionCommand.cs" />
     <Compile Include="Input\Commands\BackCommand.cs" />

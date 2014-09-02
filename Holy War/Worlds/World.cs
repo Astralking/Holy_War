@@ -21,6 +21,7 @@ namespace Holy_War.Worlds
         public SelectionBoxActor SelectionBox { get; private set; }
         public UserActor SelectedUserActor { get; private set; }
         public List<string> TextureNames { get; private set; }
+        public Camera Camera { get; private set; }
 
 		public int WidthInTiles { get; private set; }
         public int HeightInTiles { get; private set; }
@@ -31,6 +32,7 @@ namespace Holy_War.Worlds
 		{
             GroundMapArray = new Tile[height, width];
             ActorMapArray = new Actor[height, width];
+            Camera = new Camera();
 			WidthInTiles = width;
 			HeightInTiles = height;
 		    TextureNames = texturesNameList;
@@ -96,6 +98,8 @@ namespace Holy_War.Worlds
             var actorsToUpdate = ActorMapArray.Cast<Actor>()
                 .Where(tile => tile != null && tile.Updated)
                 .ToList();
+
+            Camera.Update(SelectedUserActor.ScreenLocation);
 
             if (!actorsToUpdate.Any())
                 return;

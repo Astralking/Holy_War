@@ -56,23 +56,17 @@ namespace Holy_War.Input
 				return _left;
 			if (IsPressed(RIGHT_BUTTON))
 				return _right;
-
-			if (IsPressedOnce(ACTION_BUTTON))
+			if (IsPressed(ACTION_BUTTON))
 				return _action;
-			if (IsPressedOnce(BACK_BUTTON))
+			if (IsPressed(BACK_BUTTON))
 				return _back;
-			if (IsPressedOnce(MENU_BUTTON))
+			if (IsPressed(MENU_BUTTON))
 				return _menu;
 
 			return null; 
 		}
 
-        private bool IsPressed(Keys key)
-        {
-            return _currentKeyboardState.IsKeyDown(key);
-        }
-
-		private bool IsPressedOnce(Keys key)
+		private bool IsPressed(Keys key)
 		{
             return _currentKeyboardState.IsKeyDown(key) && _previousKeyboardState.IsKeyUp(key);
 		}

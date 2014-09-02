@@ -50,7 +50,7 @@ namespace Holy_War
 		        "Boxes/BlueHighlightBox"
 		    };
 
-            CurrentWorld = new World(10, 10, textureList);
+            CurrentWorld = new World(13, 13, textureList);
 
             TextureManager.InitialiseTextures(CurrentWorld, Content);
 
@@ -101,7 +101,7 @@ namespace Holy_War
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw(GameTime gameTime)
 		{		
-			_spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
+			_spriteBatch.Begin(SpriteSortMode.FrontToBack, null, null, null, null, null, CurrentWorld.Camera.ViewMatrix);
 
             CurrentWorld.Draw(_spriteBatch);
       	    

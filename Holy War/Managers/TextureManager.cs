@@ -21,5 +21,10 @@ namespace Holy_War.Managers
             foreach (var textureString in world.TextureNames)
                 Texture.Add(textureString, _contentManager.Load<Texture2D>(textureString));
         }
+
+        public static void UnloadTextures()
+        {
+            _contentManager.Unload();
+        }
     }
 }
