@@ -16,12 +16,13 @@ namespace Holy_War.Worlds
 {
 	public class World
 	{
+		public Tile[,] TerrainMapArray { get; private set; }
 		public Tile[,] GroundMapArray { get; private set; }
-		public Actor[,] ActorMapArray { get; private set; }
         public SelectionBoxActor SelectionBox { get; private set; }
         public UserActor SelectedUserActor { get; private set; }
         public List<string> TextureNames { get; private set; }
         public Camera Camera { get; private set; }
+        public TurnTracker TurnTracker { get; private set; }
 
 		public int WidthInTiles { get; private set; }
         public int HeightInTiles { get; private set; }
@@ -30,29 +31,25 @@ namespace Holy_War.Worlds
 
 		public World(int height, int width, List<string> texturesNameList)
 		{
+            TerrainMapArray = new Tile[height, width];
             GroundMapArray = new Tile[height, width];
-            ActorMapArray = new Actor[height, width];
-            Camera = new Camera();
+            Camera = new Camera(0.6f);
 			WidthInTiles = width;
 			HeightInTiles = height;
 		    TextureNames = texturesNameList;
+            TurnTracker = new TurnTracker(2);
 		}
 
-        public void SelectActor(UserActor userActor)
-        {
-            SelectedUserActor = userActor;
-            SetSelectionBoxVisibile(false);
-        }
 
         public void SelectUserActorAtSelectionBox()
         {
-            var actorToSelect = ActorMapArray[SelectionBox.ScreenLocation.X, SelectionBox.ScreenLocation.Y] as UserActor;
+            var actorToSelect = GroundMapArray[SelectionBox.ScreenLocation.X, SelectionBox.ScreenLocation.Y] as UserActor;
 
-            if (actorToSelect == null)
-                return;
-
-            SelectedUserActor = actorToSelect;
-            SetSelectionBoxVisibile(false);
+            if (actorToSelect != null && IsCurrentlySelectableUserActor(actorToSelect))
+            {
+                SelectedUserActor = actorToSelect;
+                SetSelectionBoxVisibile(false);
+            }
         }
 
         public void SelectSelectionBox()
@@ -92,25 +89,47 @@ namespace Holy_War.Worlds
 
         public void Update()
         {
-            if (InputHandler.ActiveDevice == Device.Mouse)
-                SelectionBox.SetLocation(new Point(InputHandler.CurrentMouseState.X, InputHandler.CurrentMouseState.Y));
-
-            var actorsToUpdate = ActorMapArray.Cast<Actor>()
-                .Where(tile => tile != null && tile.Updated)
+            var actors = GroundMapArray
+                .Cast<Actor>()
+                .Where(tile => tile != null)
                 .ToList();
 
             Camera.Update(SelectedUserActor.ScreenLocation);
 
-            if (!actorsToUpdate.Any())
+            if (!actors.Any(actor => actor.Updated))
                 return;
 
-            foreach (var tile in actorsToUpdate)
-            {
-               MoveTileInArray(tile);
-
-                tile.Updated = false;
-            }
+            UpdateActorTiles(actors);
         }
+
+	    private void UpdateActorTiles(IList<Actor> actors)
+	    {
+            foreach (var tile in actors.Where(actor => actor.Updated))
+            {
+                MoveTileInArray(tile);
+                tile.Updated = false;
+                tile.TurnLocked = true;
+            }
+
+            if (ActorsAllTurnLocked(actors))
+	        {
+	            TurnTracker.NextTurn();
+                UnlockActors(actors);
+	        }
+	    }
+
+        private bool ActorsAllTurnLocked(IEnumerable<Actor> actors)
+        {
+            return actors
+                .Where(actor => (actor as UserActor).Stats.Team == TurnTracker.CurrentTeam)
+                .All(actor => actor.TurnLocked);
+        }
+
+        private void UnlockActors(IEnumerable<Actor> actors)
+	    {
+            foreach (var actor in actors)
+                actor.TurnLocked = false;
+	    }
 
 	    private void InitialiseGround()
 	    {
@@ -118,7 +137,7 @@ namespace Holy_War.Worlds
             {
                 for (var j = 0; j < HeightInTiles; j++)
                 {
-                    GroundMapArray[i, j] = new Grassland(
+                    TerrainMapArray[i, j] = new Grassland(
                         TextureManager.Texture["GrassTile"], 
                         new Point(i, j));
                 }
@@ -127,14 +146,29 @@ namespace Holy_War.Worlds
 
         private void InitialiseActors()
         {
-            int x = 0;
-            int y = 0;
+            GroundMapArray[0, 0] = new UserActor(
+                TextureManager.Texture["Actors/UserActors/BlueActor"], 
+                new Point(0, 0), 
+                Layer.Ground,
+                new ActorStats(1, 4));
 
-            ActorMapArray[x, y] = new UserActor(
-                TextureManager.Texture["BlankActor"], 
-                new Point(x, y), 
-                Layer.Actor,
-                new ActorStats(_contentManager, 4));
+            GroundMapArray[1, 0] = new UserActor(
+                TextureManager.Texture["Actors/UserActors/BlueActor"],
+                new Point(1, 0),
+                Layer.Ground,
+                new ActorStats(1, 4));
+
+            GroundMapArray[10, 10] = new UserActor(
+                TextureManager.Texture["Actors/UserActors/RedActor"],
+                new Point(10, 10),
+                Layer.Ground,
+                new ActorStats(2, 4));
+
+            GroundMapArray[10, 11] = new UserActor(
+                TextureManager.Texture["Actors/UserActors/RedActor"],
+                new Point(10, 11),
+                Layer.Ground,
+                new ActorStats(2, 4));
         }
 
         private void DrawGround(SpriteBatch spriteBatch)
@@ -143,7 +177,7 @@ namespace Holy_War.Worlds
             {
                 for (int j = 0; j < HeightInTiles; j++)
                 {
-                    var tile = GroundMapArray[i, j];
+                    var tile = TerrainMapArray[i, j];
 
                     tile.Draw(spriteBatch);                 
                 }
@@ -156,7 +190,7 @@ namespace Holy_War.Worlds
 	        {
                 for (int j = 0; j < HeightInTiles; j++)
 	            {
-                    var tile = ActorMapArray[i, j];
+                    var tile = GroundMapArray[i, j];
 
 	                if (tile != null)
                         tile.Draw(spriteBatch);
@@ -166,8 +200,13 @@ namespace Holy_War.Worlds
 
         private void MoveTileInArray(Actor tile)
 	    {
-            ActorMapArray[tile.CurrentGridLocation.X, tile.CurrentGridLocation.Y] = null;
-            ActorMapArray[tile.ScreenLocation.X, tile.ScreenLocation.Y] = tile;
+            GroundMapArray[tile.CurrentGridLocation.X, tile.CurrentGridLocation.Y] = null;
+            GroundMapArray[tile.ScreenLocation.X, tile.ScreenLocation.Y] = tile;
+	    }
+
+	    private bool IsCurrentlySelectableUserActor(UserActor userActor)
+	    {
+	        return userActor.Stats.Team == TurnTracker.CurrentTeam && !userActor.TurnLocked;
 	    }
 	}
 }

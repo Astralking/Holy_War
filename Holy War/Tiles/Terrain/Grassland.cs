@@ -7,7 +7,7 @@ namespace Holy_War.Tiles.Terrain
 	public class Grassland : Tile
 	{
 		public Grassland(Texture2D texture, Point location)
-			: base(texture, location, Layer.Ground)
+			: base(texture, location, Layer.Terrain)
 		{
 		}
 

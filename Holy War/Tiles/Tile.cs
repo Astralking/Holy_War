@@ -57,7 +57,7 @@ namespace Holy_War.Tiles
 
 	    public static int GetDefaultTileWidth()
 	    {
-	        return _defaultWidth;
+            return _defaultWidth;
 	    }
 
         public static int GetDefaultTileHeight()

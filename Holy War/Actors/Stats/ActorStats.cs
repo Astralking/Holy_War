@@ -7,10 +7,12 @@ namespace Holy_War.Actors.Stats
     public class ActorStats
     {
         public int Movement { get; private set; }
+        public int Team { get; private set; }
 
-        public ActorStats(ContentManager contentManager, int movement)
+        public ActorStats(int team, int movement)
         {
             Movement = movement;
+            Team = team;
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Holy_War.Input.Commands
             if(selectionBox != null)
                 Execute(selectionBox);
             else
-            userActor.Action(userActor);
+                userActor.Action(userActor);
         }
     }
 }

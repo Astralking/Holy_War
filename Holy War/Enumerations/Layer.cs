@@ -7,8 +7,8 @@ namespace Holy_War.Enumerations
 {
 	public enum Layer
 	{
-		Ground = 0,
-		Actor = 1,
+		Terrain = 0,
+		Ground = 1,
 		Sky = 2,
         Master = 10
     }

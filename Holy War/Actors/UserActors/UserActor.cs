@@ -1,4 +1,5 @@
-﻿using Holy_War.Actors.Stats;
+﻿using System.Xml.Schema;
+using Holy_War.Actors.Stats;
 using Holy_War.Enumerations;
 using Holy_War.Managers;
 using Holy_War.Tiles;
@@ -10,13 +11,13 @@ namespace Holy_War.Actors.UserActors
 {
     public class UserActor : Actor
     {
-        //private readonly HighlightTile _highlightTile;
         private readonly MovementZone _movementZone;
+        public ActorStats Stats { get; private set; }
 
         public UserActor(Texture2D texture, Point location, Layer layer, ActorStats stats)
-            : base(texture, location, layer, stats)
+            : base(texture, location, layer)
         {
-            //_highlightTile = new HighlightTile(TextureManager.Texture["Boxes/RedHighlightBox"], location, Layer.Master);
+            Stats = stats;
 
             _movementZone = 
                 stats != null 
@@ -32,26 +33,38 @@ namespace Holy_War.Actors.UserActors
             base.Draw(spriteBatch);
         }
 
+        public void ResetZoneOrigins(Point newZoneOrigin)
+        {
+            _movementZone.ResetOrigin(newZoneOrigin);
+        }
+
         public override void Move(Point direction, GameTime gameTime)
         {
-            ScreenLocation += direction;
-                //.X * (int)gameTime.ElapsedGameTime.TotalSeconds, 
-                //direction.Y * (int)gameTime.ElapsedGameTime.TotalSeconds);
-
-            //_highlightTile.ScreenLocation += direction;
+            if (ScreenLocation + direction == StartingPosition || 
+                _movementZone.PositionIsInZone(ScreenLocation + direction))
+                ScreenLocation += direction;
 
             base.Move(direction, gameTime);
         }
 
         public virtual void Action(UserActor userActor)
         {
-            Updated = true;
+            if (ScreenLocation == StartingPosition)
+            {
+                MainGame.CurrentWorld.SelectSelectionBox();
+                return;
+            }
 
-            _movementZone.ResetOrigin(ScreenLocation);
+            if (IsValidPosition())
+            {
+                Updated = true;
 
-            MainGame.CurrentWorld.SelectSelectionBox();
+                ResetZoneOrigins(ScreenLocation);
 
-            base.Action();
+                MainGame.CurrentWorld.SelectSelectionBox();
+
+                base.Action();
+            }
         }
 
         public void Back()
@@ -68,6 +81,12 @@ namespace Holy_War.Actors.UserActors
         {
             //_highlightTile.Draw(spriteBatch);           
             _movementZone.Draw(spriteBatch);
+        }
+
+        private bool IsValidPosition()
+        {
+            return ScreenLocation != StartingPosition &&
+                   MainGame.CurrentWorld.GroundMapArray[ScreenLocation.X, ScreenLocation.Y] == null;
         }
     }
 }

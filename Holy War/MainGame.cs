@@ -1,15 +1,12 @@
 ﻿#region Using Statements
-using System;
 using System.Collections.Generic;
-using Holy_War.Actors;
-using Holy_War.Actors.UserActors;
-using Holy_War.Managers;
-using Holy_War.Tiles;
-using Holy_War.Worlds;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Holy_War.Managers;
+using Holy_War.Options;
+using Holy_War.Worlds;
 using Holy_War.Input;
+
 #endregion
 
 namespace Holy_War
@@ -20,13 +17,22 @@ namespace Holy_War
 	public class MainGame : Game
 	{
 	    public static World CurrentWorld;
+        public static GameOptions GameOptions;
+
+	    private TurnTracker _turnTracker;
 	    private GraphicsDeviceManager _graphics;
 		private SpriteBatch _spriteBatch;
-	    private InGameInputHandler _inputHandler;      
+	    private InGameInputHandler _inputHandler;
 
-		public MainGame() : base()
+
+		public MainGame()
 		{
-			_graphics = new GraphicsDeviceManager(this) {PreferredBackBufferHeight = 640, PreferredBackBufferWidth = 640};
+            GameOptions = new GameOptions(640, 640);
+			_graphics = new GraphicsDeviceManager(this)
+			{
+                PreferredBackBufferHeight = GameOptions.ResolutionY,
+                PreferredBackBufferWidth = GameOptions.ResolutionX
+			};
 
 		    Content.RootDirectory = "Content";
 		}
@@ -44,13 +50,16 @@ namespace Holy_War
 		    var textureList = new List<string>
 		    {
                 "GrassTile",
-                "BlankActor",
+                "Actors/UserActors/BlueActor",
+                "Actors/UserActors/RedActor",
+                "Actors/UserActors/BlankActor",
 		        "Boxes/SelectionBox",
 		        "Boxes/RedHighlightBox",
 		        "Boxes/BlueHighlightBox"
 		    };
 
-            CurrentWorld = new World(13, 13, textureList);
+            CurrentWorld = new World(20, 20, textureList);
+            
 
             TextureManager.InitialiseTextures(CurrentWorld, Content);
 
@@ -87,10 +96,10 @@ namespace Holy_War
 		{
             var command = _inputHandler.HandleInput(gameTime);
 
-			if (command != null)
-                command.Execute(CurrentWorld.SelectedUserActor, gameTime);
+            if (command != null && !CurrentWorld.SelectedUserActor.TurnLocked)
+		        command.Execute(CurrentWorld.SelectedUserActor, gameTime);
 
-            CurrentWorld.Update();
+		    CurrentWorld.Update();
 
 			base.Update(gameTime);
 		}

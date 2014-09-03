@@ -10,8 +10,9 @@ namespace Holy_War.Zones
 {
     public class Zone : IZone
     {
-        private readonly int _distance;
-        private readonly int _zoneSize;
+        internal readonly int _distance;
+        internal readonly int _zoneSize;
+        internal readonly Point _origin;
 
         public int Distance { get { return _distance; } }
         public HighlightTile[,] Grid { get; set; }
@@ -19,49 +20,49 @@ namespace Holy_War.Zones
         public Zone(int distance, Point origin)
         {
             _distance = distance;
+            _origin = origin;
             _zoneSize = GetZoneSize(distance);
-
-            CalculateGrid(origin.X, origin.Y);
-        }
-
-        public void ResetOrigin(Point newOrigin)
-        {
-            CalculateGrid(newOrigin.X, newOrigin.Y);
+           
+            ResetGrid();
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
         }
 
-        private void CalculateGrid(int x, int y)
+        public virtual void ResetOrigin(Point newOrigin)
         {
-            Grid = new HighlightTile[MainGame.CurrentWorld.WidthInTiles, MainGame.CurrentWorld.HeightInTiles];
+        }
 
-            for (var i = x - _distance; i <= x + _distance; ++i)
-            {
-                for (var j = y - _distance; j <= y + _distance; ++j)
-                {
-                    if (i < 0 || j < 0 || i >= MainGame.CurrentWorld.WidthInTiles || j >= MainGame.CurrentWorld.HeightInTiles) 
-                        continue;
+        public virtual void CalculateGrid(int x, int y)
+        {
+        }
 
-                    if (Math.Abs(x - i) + Math.Abs(y - j) > _distance) 
-                        continue;
+        internal bool PositionIsInZone(Point position)
+        {
+            if (_distance == 0)
+                return true;
 
-                    if (i == x && j == y) 
-                        continue;
+            if (position.X < 0
+                || position.Y < 0
+                || position.X >= MainGame.CurrentWorld.WidthInTiles
+                || position.Y >= MainGame.CurrentWorld.HeightInTiles)
+                return false;
 
-                    Grid[i, j] = new HighlightTile(
-                        TextureManager.Texture["Boxes/BlueHighlightBox"],
-                        new Point(i, j), 
-                        Layer.Master);
-                }
-            }
+            return Grid[position.X, position.Y] != null;
         }
 
         private static int GetZoneSize(int distance)
         {
             return (distance * 2) + 1;
         }
+
+        internal void ResetGrid()
+        {
+            Grid = new HighlightTile[MainGame.CurrentWorld.WidthInTiles, MainGame.CurrentWorld.HeightInTiles];
+        }
+
+
     }
 }
 

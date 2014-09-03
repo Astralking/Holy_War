@@ -54,3 +54,35 @@ C:\Holy War\Holy War\bin\Windows\Debug\Content\BlankActor.png
 C:\Holy War\Holy War\bin\Windows\Debug\Content\Boxes\SelectionBox.png
 C:\Holy War\Holy War\bin\Windows\Debug\Content\Boxes\BlueHighlightBox.png
 C:\Holy War\Holy War\bin\Windows\Debug\Content\Boxes\RedHighlightBox.png
+C:\My Projects\Holy War\Holy_War\Holy War\obj\x86\Debug\Holy War.exe
+C:\My Projects\Holy War\Holy_War\Holy War\obj\x86\Debug\Holy War.pdb
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Boxes\BlueHighlightBox.png
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Boxes\RedHighlightBox.png
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\GrassTile.png
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Boxes\SelectionBox.png
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\Holy War.exe
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\Holy War.pdb
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\MonoGame.Framework.dll
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.dll
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\Lidgren.Network.dll
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.XInput.dll
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.xml
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.XInput.xml
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\My Projects\Holy War\Holy_War\Holy War\obj\x86\Debug\Holy War.csprojResolveAssemblyReference.cache
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\BlankActor.png
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\BlueActor.png
+C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\RedActor.png
