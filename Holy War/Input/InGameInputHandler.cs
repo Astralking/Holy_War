@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Holy_War.Actors;
-using Holy_War.Enumerations;
+﻿using Holy_War.Enumerations;
 using Holy_War.Input.Commands;
-using Holy_War.Sprite;
-using Holy_War.Tiles;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace Holy_War.Input
 {

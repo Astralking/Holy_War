@@ -10,19 +10,24 @@ namespace Holy_War.Input.Commands
 {
     public class ActionCommand : IInputCommand
     {
-        public void Execute(SelectionBoxActor userActor)
+        public void Execute(IUserActor userActor, GameTime gameTime)
         {
-            userActor.Action(userActor);
+            userActor.Action();
         }
 
-        public void Execute(UserActor userActor, GameTime gameTime)
-        {
-            var selectionBox = userActor as SelectionBoxActor;
+        //public void Execute(SelectionBoxActor userActor)
+        //{
+        //    userActor.Action(userActor);
+        //}
 
-            if(selectionBox != null)
-                Execute(selectionBox);
-            else
-                userActor.Action(userActor);
-        }
+        //public void Execute(UserActor userActor, GameTime gameTime)
+        //{
+        //    var selectionBox = userActor as SelectionBoxActor;
+
+        //    if (selectionBox != null)
+        //        Execute(selectionBox);
+        //    else
+        //        userActor.Action(userActor);
+        //}
     }
 }

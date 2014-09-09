@@ -8,11 +8,12 @@ using Holy_War.Tiles;
 
 namespace Holy_War.Zones
 {
-    public class Zone : IZone
+    public class Zone
     {
         internal readonly int _distance;
         internal readonly int _zoneSize;
         internal readonly Point _origin;
+        internal bool _visible = false;
 
         public int Distance { get { return _distance; } }
         public HighlightTile[,] Grid { get; set; }
@@ -26,10 +27,6 @@ namespace Holy_War.Zones
             ResetGrid();
         }
 
-        public virtual void Draw(SpriteBatch spriteBatch)
-        {
-        }
-
         public virtual void ResetOrigin(Point newOrigin)
         {
         }
@@ -38,15 +35,19 @@ namespace Holy_War.Zones
         {
         }
 
-        internal bool PositionIsInZone(Point position)
+        public void Draw(SpriteBatch spriteBatch)
+        {
+        }
+
+        public bool PositionIsInZone(Point position)
         {
             if (_distance == 0)
                 return true;
 
             if (position.X < 0
                 || position.Y < 0
-                || position.X >= MainGame.CurrentWorld.WidthInTiles
-                || position.Y >= MainGame.CurrentWorld.HeightInTiles)
+                || position.X >= GameScreen.CurrentWorld.WidthInTiles
+                || position.Y >= GameScreen.CurrentWorld.HeightInTiles)
                 return false;
 
             return Grid[position.X, position.Y] != null;
@@ -59,10 +60,8 @@ namespace Holy_War.Zones
 
         internal void ResetGrid()
         {
-            Grid = new HighlightTile[MainGame.CurrentWorld.WidthInTiles, MainGame.CurrentWorld.HeightInTiles];
+            Grid = new HighlightTile[GameScreen.CurrentWorld.WidthInTiles, GameScreen.CurrentWorld.HeightInTiles];
         }
-
-
     }
 }
 

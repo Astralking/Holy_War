@@ -13,19 +13,30 @@ namespace Holy_War.Helpers
             {
                 case Orientation.North:
                     return new Point(0, -1);
-                    break;
                 case Orientation.South:
                     return new Point(0, 1);
-                    break;
                 case Orientation.East:
                     return new Point(1, 0);
-                    break;
                 case Orientation.West:
                     return new Point(-1, 0);
-                    break;
             }
     
             return new Point(0,0);
+        }
+
+        public static Vector2 GetLocationInPixels(Vector2 location)
+        {
+            return new Vector2(location.X * Tile.GetDefaultTileWidth(), location.Y * Tile.GetDefaultTileHeight());
+        }
+
+        public static Vector2 GetLocationInPixels(Point location)
+        {
+            return new Vector2(location.X * Tile.GetDefaultTileWidth(), location.Y * Tile.GetDefaultTileHeight());
+        }
+
+        public static Vector2 GetLocationInTiles(Point location)
+        {
+            return new Vector2(location.X, location.Y);
         }
 
         public static int PointToGridPoint(float coord)
@@ -48,9 +59,24 @@ namespace Holy_War.Helpers
             return coord * Tile.GetDefaultTileWidth();
         }
 
+        public static Vector2 PointToVector(Point point)
+        {
+            return new Vector2(point.X, point.Y);
+        }
+
+        public static Point VectorToPoint(Vector2 vector)
+        {
+            return new Point((int)vector.X, (int)vector.Y);
+        }
+
         public static int PixelHeightToTile(int coord)
         {
             return coord * Tile.GetDefaultTileHeight();
+        }
+
+        public static float LayerToFloat(Layer layer)
+        {
+            return (float)layer * 0.1f;
         }
     }
 }

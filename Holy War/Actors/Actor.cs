@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Holy_War.Actors.UserActors;
+using Holy_War.Helpers;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Holy_War.Actors.Stats;
 using Holy_War.Tiles;
@@ -6,49 +8,48 @@ using Holy_War.Enumerations;
 
 namespace Holy_War.Actors
 {
-	public abstract class Actor : Tile, IActor
+	public abstract class Actor : Tile
 	{
-        public Point StartingPosition { get; private set; }
-
-        private bool _turnLocked = false;
+	    private bool _visible = true;
 	    private float _transparency = 1f;
-
-        public bool TurnLocked
-        {
-            get { return _turnLocked; }
-            set
-            {
-                _turnLocked = value;
-                SetTransparency(_turnLocked);
-            }
-        }
 
 		protected Actor(Texture2D texture, Point location, Layer layer)
             : base(texture, location, layer)
 		{
-		    StartingPosition = location;
 		}
 
-		public virtual void Action()
-		{
-            StartingPosition = ScreenLocation;
-		}
-
-        public override void Draw(SpriteBatch spriteBatch)
+        public virtual void Show()
         {
-            var locationInPixels = GetLocationInPixels(ScreenLocation);
-
-            spriteBatch.Draw(
-                base.Texture,
-                locationInPixels, 
-                null,
-                Color.White * _transparency, 
-                0f, 
-                new Vector2(0, 0), 
-                1f,  
-                SpriteEffects.None, 
-                LayerToFloat(Layer));
+            _visible = true;
         }
+
+        public virtual void Hide()
+        {
+            _visible = false;
+        }
+
+        public virtual void Action()
+		{          
+		}
+
+	    public override void Draw(SpriteBatch spriteBatch)
+	    {
+	        if (_visible)
+	        {	        
+	            var locationInPixels = Converter.GetLocationInPixels(ScreenLocation);
+
+	            spriteBatch.Draw(
+	                base.Texture,
+	                locationInPixels,
+	                null,
+	                Color.White*_transparency,
+	                0f,
+	                new Vector2(0, 0),
+	                1f,
+	                SpriteEffects.None,
+	                Converter.LayerToFloat(Layer));
+	        }
+	}
 
 	    public virtual void Move(Point direction, GameTime gameTime)
 	    {

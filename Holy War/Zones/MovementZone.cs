@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Holy_War.Zones
 {
-    public class MovementZone : Zone
+    public class MovementZone : Zone, IZone
     {
         public MovementZone(int size, Point origin)
             : base(size, origin)
@@ -16,15 +16,13 @@ namespace Holy_War.Zones
             Initialise(origin.X, origin.Y);
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch)
         {
             foreach (var highlightTile in Grid
                 .Cast<HighlightTile>()
                 .ToList()
                 .Where(highlightTile => highlightTile != null))
                 highlightTile.Draw(spriteBatch);
-
-            base.Draw(spriteBatch);
         }
 
         public override void ResetOrigin(Point newOrigin)
@@ -40,7 +38,7 @@ namespace Holy_War.Zones
             {
                 for (var j = y - _distance; j <= y + _distance; ++j)
                 {
-                    if (i < 0 || j < 0 || i >= MainGame.CurrentWorld.WidthInTiles || j >= MainGame.CurrentWorld.HeightInTiles) 
+                    if (i < 0 || j < 0 || i >= GameScreen.CurrentWorld.WidthInTiles || j >= GameScreen.CurrentWorld.HeightInTiles) 
                         continue;
 
                     if (Math.Abs(x - i) + Math.Abs(y - j) > _distance) 
@@ -50,9 +48,9 @@ namespace Holy_War.Zones
                         continue;
 
                     Grid[i, j] = new HighlightTile(
-                        TextureManager.Texture["Boxes/BlueHighlightBox"],
+                        SpriteManager.Textures["Boxes/BlueHighlightBox"],
                         new Point(i, j), 
-                        Layer.Master);
+                        Layer.Zones);
                 }
             }
         }

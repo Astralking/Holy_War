@@ -1,5 +1,6 @@
 ﻿using Holy_War.Tiles;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Holy_War.Zones
 {
@@ -8,5 +9,7 @@ namespace Holy_War.Zones
         HighlightTile[,] Grid { get; set; }
         void ResetOrigin(Point newOrigin);
         void CalculateGrid(int x, int y);
+        void Draw(SpriteBatch spriteBatch);
+        bool PositionIsInZone(Point position);
     }
 }

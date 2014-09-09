@@ -6,6 +6,6 @@ namespace Holy_War.Input
 {
 	public interface IInputCommand
 	{
-        void Execute(UserActor userActor, GameTime gameTime);
+        void Execute(IUserActor userActor, GameTime gameTime);
 	}
 }

@@ -10,7 +10,7 @@ namespace Holy_War.Input.Commands
 {
     public class BackCommand : IInputCommand
     {
-        public void Execute(UserActor userActor, GameTime gameTime)
+        public void Execute(IUserActor userActor, GameTime gameTime)
         {
             userActor.Back();
         }

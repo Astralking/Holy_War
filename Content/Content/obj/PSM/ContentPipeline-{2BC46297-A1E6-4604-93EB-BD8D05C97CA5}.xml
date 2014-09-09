@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Actors\UserActors\BlankActor.png</Source>
+      <Name>Actors\UserActors\BlankActor</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\BlankActor.xnb</Output>
+      <Time>2014-09-06T20:57:57.8779467+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Actors\UserActors\BlueActor.png</Source>
+      <Name>Actors\UserActors\BlueActor</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\BlueActor.xnb</Output>
+      <Time>2014-09-06T20:57:57.8919475+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Actors\UserActors\RedActor.png</Source>
+      <Name>Actors\UserActors\RedActor</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\RedActor.xnb</Output>
+      <Time>2014-09-06T20:57:57.9099485+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Boxes\BlueHighlightBox.png</Source>
+      <Name>Boxes\BlueHighlightBox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Boxes\BlueHighlightBox.xnb</Output>
+      <Time>2014-09-06T20:57:57.9689519+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Boxes\RedHighlightBox.png</Source>
+      <Name>Boxes\RedHighlightBox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Boxes\RedHighlightBox.xnb</Output>
+      <Time>2014-09-06T20:57:57.9779524+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Boxes\SelectionBox.png</Source>
+      <Name>Boxes\SelectionBox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Boxes\SelectionBox.xnb</Output>
+      <Time>2014-09-07T19:00:27.2234696+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Terrain\GrassTile.png</Source>
+      <Name>Terrain\GrassTile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile.xnb</Output>
+      <Time>2014-09-06T20:57:58.0449562+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\HeadingFont.spritefont</Source>
+      <Name>Fonts\HeadingFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Fonts\HeadingFont.xnb</Output>
+      <Time>2014-09-06T21:05:01.9572026+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Menus\ContextMenu\ContextMenuBottom.png</Source>
+      <Name>Menus\ContextMenu\ContextMenuBottom</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Menus\ContextMenu\ContextMenuBottom.xnb</Output>
+      <Time>2014-09-07T12:17:35.9419514+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Menus\ContextMenu\ContextMenuSection.png</Source>
+      <Name>Menus\ContextMenu\ContextMenuSection</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Menus\ContextMenu\ContextMenuSection.xnb</Output>
+      <Time>2014-09-07T12:17:35.9449516+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Menus\ContextMenu\ContextMenuTop.png</Source>
+      <Name>Menus\ContextMenu\ContextMenuTop</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Menus\ContextMenu\ContextMenuTop.xnb</Output>
+      <Time>2014-09-07T12:17:35.9589524+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Menus\SelectionArrow.png</Source>
+      <Name>Menus\SelectionArrow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Menus\SelectionArrow.xnb</Output>
+      <Time>2014-09-07T12:49:31.078491+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\ContextMenuFont.spritefont</Source>
+      <Name>Fonts\ContextMenuFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Fonts\ContextMenuFont.xnb</Output>
+      <Time>2014-09-07T16:08:05.4749555+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Boxes\TargetBox.png</Source>
+      <Name>Boxes\TargetBox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Boxes\TargetBox.xnb</Output>
+      <Time>2014-09-07T19:42:19.7171761+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Actors\UserActors\ArcherBlue.png</Source>
+      <Name>Actors\UserActors\ArcherBlue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\ArcherBlue.xnb</Output>
+      <Time>2014-09-09T12:23:00.0013385+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Actors\UserActors\ArcherRed.png</Source>
+      <Name>Actors\UserActors\ArcherRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\ArcherRed.xnb</Output>
+      <Time>2014-09-09T12:25:19.6023233+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Actors\UserActors\AssassinBlue.png</Source>
+      <Name>Actors\UserActors\AssassinBlue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\AssassinBlue.xnb</Output>
+      <Time>2014-09-09T12:25:14.5790359+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Actors\UserActors\AssassinRed.png</Source>
+      <Name>Actors\UserActors\AssassinRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\AssassinRed.xnb</Output>
+      <Time>2014-09-09T12:23:35.8483889+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Actors\UserActors\MonkBlue.png</Source>
+      <Name>Actors\UserActors\MonkBlue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\MonkBlue.xnb</Output>
+      <Time>2014-09-09T12:23:59.3387324+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Actors\UserActors\MonkRed.png</Source>
+      <Name>Actors\UserActors\MonkRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\MonkRed.xnb</Output>
+      <Time>2014-09-09T12:24:59.4731719+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Actors\UserActors\SorcererBlue.png</Source>
+      <Name>Actors\UserActors\SorcererBlue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\SorcererBlue.xnb</Output>
+      <Time>2014-09-09T12:23:48.1570929+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Actors\UserActors\SorcererRed.png</Source>
+      <Name>Actors\UserActors\SorcererRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\SorcererRed.xnb</Output>
+      <Time>2014-09-09T12:23:53.7484127+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Actors\UserActors\WarriorBlue.png</Source>
+      <Name>Actors\UserActors\WarriorBlue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\WarriorBlue.xnb</Output>
+      <Time>2014-09-09T12:25:30.1539268+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Actors\UserActors\WarriorRed.png</Source>
+      <Name>Actors\UserActors\WarriorRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\WarriorRed.xnb</Output>
+      <Time>2014-09-09T12:22:53.1319456+01:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{2BC46297-A1E6-4604-93EB-BD8D05C97CA5}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>PSM</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\joe\Holy War\Holy_War\Content\ContentContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\joe\Holy War\Holy_War\Content\Content\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\joe\Holy War\Holy_War\Content\Content\obj\PSM\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\MSBuild\MonoGame\v3.0\MonoGameContentProcessors.dll</Key>
+        <Value>2014-04-05T22:56:18+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2014-09-06T20:55:11.6604396+01:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

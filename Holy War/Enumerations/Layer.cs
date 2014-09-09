@@ -10,6 +10,8 @@ namespace Holy_War.Enumerations
 		Terrain = 0,
 		Ground = 1,
 		Sky = 2,
-        Master = 10
+        Zones = 8,
+        Master = 9,
+        MasterText = 10       
     }
 }

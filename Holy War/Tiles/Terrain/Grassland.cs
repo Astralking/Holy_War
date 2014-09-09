@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Holy_War.Helpers;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Holy_War.Enumerations;
 
@@ -13,7 +14,7 @@ namespace Holy_War.Tiles.Terrain
 
 		public override void Draw(SpriteBatch spriteBatch)
 		{
-		    var locationInPixels = GetLocationInPixels(ScreenLocation);
+		    var locationInPixels = Converter.GetLocationInPixels(ScreenLocation);
 
             spriteBatch.Draw(
                 base.Texture, 
@@ -24,7 +25,7 @@ namespace Holy_War.Tiles.Terrain
                 new Vector2(0, 0), 
                 1f, 
                 SpriteEffects.None, 
-                LayerToFloat(Layer));
+                Converter.LayerToFloat(Layer));
 		}
 	}
 }

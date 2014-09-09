@@ -24,23 +24,23 @@ namespace Holy_War.Actors
         private bool _visible = true;
 
         public SelectionBoxActor(Texture2D texture, Point location, Layer layer) 
-            : base(texture, location, layer, null)
+            : base(texture, location, layer)
         {
-            ScreenLocation = location;
+            SetScreenLocation(location);
         }
 
         public void SetLocation(Point location)
         {
             var newLocation = new Point(location.X, location.Y);
 
-            ScreenLocation = newLocation;
+            SetScreenLocation(newLocation);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             if (_visible)
             {
-                var locationInPixels = GetLocationInPixels(ScreenLocation);
+                var locationInPixels = Converter.GetLocationInPixels(ScreenLocation);
 
                 spriteBatch.Draw(Texture,
                     locationInPixels,
@@ -50,13 +50,13 @@ namespace Holy_War.Actors
                     new Vector2(0, 0),
                     1f,
                     SpriteEffects.None,
-                    LayerToFloat(Layer.Master));
+                    Converter.LayerToFloat(Layer.Zones));
             }
         }
 
         public void Action(SelectionBoxActor userActor)
         {
-            MainGame.CurrentWorld.SelectUserActorAtSelectionBox();
+            GameScreen.CurrentWorld.SelectUserActorAtSelectionBox();
         }
     }
 }

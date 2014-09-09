@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Holy_War.Enumerations;
+using Holy_War.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -18,7 +19,7 @@ namespace Holy_War.Tiles
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            var locationInPixels = GetLocationInPixels(ScreenLocation);
+            var locationInPixels = Converter.GetLocationInPixels(ScreenLocation);
 
             spriteBatch.Draw(
                 base.Texture, 
@@ -29,7 +30,7 @@ namespace Holy_War.Tiles
                 new Vector2(0, 0), 
                 1f, 
                 SpriteEffects.None, 
-                LayerToFloat(Layer));
+                Converter.LayerToFloat(Layer));
         }
     }
 }

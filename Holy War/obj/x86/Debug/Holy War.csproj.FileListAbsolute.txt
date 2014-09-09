@@ -86,3 +86,60 @@ C:\My Projects\Holy War\Holy_War\Holy War\obj\x86\Debug\Holy War.csprojResolveAs
 C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\BlankActor.png
 C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\BlueActor.png
 C:\My Projects\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\RedActor.png
+C:\Users\joe\Holy War\Holy_War\Holy War\obj\x86\Debug\Holy War.exe
+C:\Users\joe\Holy War\Holy_War\Holy War\obj\x86\Debug\Holy War.pdb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Holy War.exe
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Holy War.pdb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.dll
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Lidgren.Network.dll
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.xml
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\joe\Holy War\Holy_War\Holy War\obj\x86\Debug\Holy War.csprojResolveAssemblyReference.cache
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\BlankActor.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\BlueActor.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\RedActor.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Boxes\BlueHighlightBox.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Boxes\RedHighlightBox.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Boxes\SelectionBox.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Terrain\GrassTile.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\BlankActor.png
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\BlueActor.png
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\RedActor.png
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Boxes\BlueHighlightBox.png
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Boxes\RedHighlightBox.png
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Boxes\SelectionBox.png
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Terrain\GrassTile.png
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\IgnoreMe.dll
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Fonts\HeadingFont.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Menus\ContextMenu\ContextMenuBottom.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Menus\ContextMenu\ContextMenuSection.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Menus\ContextMenu\ContextMenuTop.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Menus\SelectionArrow.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Fonts\ContextMenuFont.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Boxes\TargetBox.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\ArcherBlue.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\ArcherRed.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\AssassinBlue.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\AssassinRed.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\MonkBlue.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\MonkRed.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\SorcererBlue.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\SorcererRed.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\WarriorBlue.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\WarriorRed.xnb
