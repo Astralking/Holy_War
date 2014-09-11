@@ -16,10 +16,10 @@ namespace Holy_War
     public class ScreenManager : DrawableGameComponent
     {
         #region Fields
-        private List<Screen> _screens = new List<Screen>();
-        private List<Screen> _screensToUpdate = new List<Screen>();
-        private SpriteBatch _spriteBatch;
-        private InputHandler _inputHandler;
+		private List<IScreen> _screens = new List<IScreen>();
+		private List<IScreen> _screensToUpdate = new List<IScreen>();
+		private IInputHandler _inputHandler; 
+		private SpriteBatch _spriteBatch;
 
         private bool isInitialized;
 
@@ -54,7 +54,7 @@ namespace Holy_War
             _inputHandler = new InGameInputHandler(Content);
 
             //load screen dedicated content
-            foreach (Screen screen in _screens)
+            foreach (IScreen screen in _screens)
                 screen.LoadContent();
         }
 
@@ -64,7 +64,7 @@ namespace Holy_War
         protected override void UnloadContent()
         {
             //Tells the screen to unload their content.
-            foreach (Screen screen in _screens)
+            foreach (IScreen screen in _screens)
                 screen.UnloadContent();
         }
         #endregion
@@ -83,7 +83,7 @@ namespace Holy_War
             if (_screens.Count == 0)
                 this.Game.Exit();
 
-            foreach (Screen screen in _screens)
+            foreach (IScreen screen in _screens)
                 _screensToUpdate.Add(screen);
 
             bool screenIsCovered = false;
@@ -98,7 +98,7 @@ namespace Holy_War
             {
                 while (_screensToUpdate.Count > 0)
                 {
-                    Screen screen = _screensToUpdate[_screensToUpdate.Count - 1];
+                    IScreen screen = _screensToUpdate[_screensToUpdate.Count - 1];
 
                     _screensToUpdate.RemoveAt(_screensToUpdate.Count - 1);
 
@@ -130,7 +130,7 @@ namespace Holy_War
         /// <param name="gameTime">Time object to pass to the screens</param>
         public override void Draw(GameTime gameTime)
         {
-            foreach (Screen screen in _screens)
+            foreach (IScreen screen in _screens)
             {           
                 if (screen.ScreenState == ScreenState.Hidden)
                     continue;
@@ -147,7 +147,7 @@ namespace Holy_War
         /// Adds a screen to the manager
         /// </summary>
         /// <param name="screen">The screen to be added</param>
-        public void AddScreen(Screen screen)
+        public void AddScreen(IScreen screen)
         {
             //Sets the reference to the screen manager on the screen
             screen.ScreenManager = this;
@@ -168,7 +168,7 @@ namespace Holy_War
         /// Removed the desired screen from the system
         /// </summary>
         /// <param name="screen">The screen we wish to remove</param>
-        public void RemoveScreen(Screen screen)
+        public void RemoveScreen(IScreen screen)
         {
             //If the screen manager is initialized, unload the screen content.
             if (this.isInitialized)

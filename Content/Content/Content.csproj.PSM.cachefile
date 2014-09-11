@@ -5,12 +5,10 @@ Content\Boxes\BlueHighlightBox.xnb
 Content\Boxes\RedHighlightBox.xnb
 Content\Boxes\SelectionBox.xnb
 Content\Terrain\GrassTile.xnb
-Content\Fonts\HeadingFont.xnb
 Content\Menus\ContextMenu\ContextMenuBottom.xnb
 Content\Menus\ContextMenu\ContextMenuSection.xnb
 Content\Menus\ContextMenu\ContextMenuTop.xnb
 Content\Menus\SelectionArrow.xnb
-Content\Fonts\ContextMenuFont.xnb
 Content\Boxes\TargetBox.xnb
 Content\Actors\UserActors\ArcherBlue.xnb
 Content\Actors\UserActors\ArcherRed.xnb
@@ -22,6 +20,8 @@ Content\Actors\UserActors\SorcererBlue.xnb
 Content\Actors\UserActors\SorcererRed.xnb
 Content\Actors\UserActors\WarriorBlue.xnb
 Content\Actors\UserActors\WarriorRed.xnb
+Content\Fonts\HeadingFont.xnb
+Content\Fonts\ContextMenuFont.xnb
 Content\Actors\UserActors\BlankActor.png
 Content\Actors\UserActors\BlueActor.png
 Content\Actors\UserActors\RedActor.png

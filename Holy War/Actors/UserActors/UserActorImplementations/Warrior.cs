@@ -7,11 +7,41 @@ using Microsoft.Xna.Framework;
 
 namespace Holy_War.Actors.UserActors.UserActorImplementations
 {
-    public class Warrior : UserActorWithZones
+    public class Warrior : UserActorWithStats, IUserActor
     {
-        public Warrior(List<IMenuAction> menuActions, ActorStats stats, Point location, Layer layer)
-            : base(menuActions, stats, GetTeamTexture("Actors/UserActors/Warrior", stats.Team), location, layer)
+        internal Warrior(Point location, Team team): base(
+			GenerateMenuActions(),  
+			GenerateActorStats(team), 
+			GetTeamTexture("Actors/UserActors/Warrior", team), 
+			location, 
+			Layer.Ground)
         {
-        }
+		}
+
+		private static ActorStats GenerateActorStats(Team team)
+		{
+			return new ActorStats(
+				primaryStat: Enumerations.ActorStats.PrimaryStat.Strength,
+				attackType: Enumerations.ActorStats.AttackType.Slashing,
+				armorType: Enumerations.ActorStats.ArmorType.Medium,
+				team: team,
+				hp: 12,
+				strength: 7,
+				dexterity: 3,
+				intelligence: 3,
+				attackRange: 1,
+				movement: 3);
+		}
+
+		private static List<IMenuAction> GenerateMenuActions()
+		{
+			return new List<IMenuAction>
+            {
+                new EndTurnMenuAction("End Turn"),
+                new AttackMenuAction("Attack")
+            };
+		}
+
+		public Team Team { get { return Stats.Team; } }
     }
 }

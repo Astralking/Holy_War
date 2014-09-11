@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Holy_War.Actors.Stats;
 using Holy_War.Enumerations;
 using Holy_War.Enumerations.ActorStats;
@@ -13,12 +12,12 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Holy_War.Actors.UserActors
 {
-    public class UserActorWithZones : UserActor
+    public class UserActorWithStats : UserActor
     {
         private readonly List<IMenuAction> _menuActions;
         private ContextMenu _contextMenu;
         private UserActorState _state;
-        private TargetBoxActor _targetBoxActor;
+        private BoxActors.TargetBoxActor _targetBoxActor;
         private IZone _activeZone;
 
         public bool Dead { get; private set; }
@@ -26,7 +25,7 @@ namespace Holy_War.Actors.UserActors
         public IZone MovementZone { get; private set; }
         public IZone AttackZone { get; private set; }
 
-        public UserActorWithZones(List<IMenuAction> menuActions, ActorStats stats, Texture2D texture, Point location, Layer layer)
+        public UserActorWithStats(List<IMenuAction> menuActions, ActorStats stats, Texture2D texture, Point location, Layer layer)
             : base(texture, location, layer)
         {
             Stats = stats;
@@ -97,7 +96,7 @@ namespace Holy_War.Actors.UserActors
                     {
                         var userActorToAttack =
                             GameScreen.CurrentWorld.GroundMapArray[
-                                _targetBoxActor.ScreenLocation.X, _targetBoxActor.ScreenLocation.Y] as UserActorWithZones;
+                                _targetBoxActor.ScreenLocation.X, _targetBoxActor.ScreenLocation.Y] as UserActorWithStats;
 
                         if (userActorToAttack != null)
                         {
@@ -152,12 +151,10 @@ namespace Holy_War.Actors.UserActors
                 case UserActorState.Moving:
                     break;
                 case UserActorState.Attacking:
-                    _targetBoxActor = new TargetBoxActor(
-                        null,
+                    _targetBoxActor = new BoxActors.TargetBoxActor(
                         SpriteManager.Textures["Boxes/TargetBox"],
                         ScreenLocation,
-                        Layer.Zones,
-                        null);
+                        Layer.Zones);
 
                     _targetBoxActor.Show();
                     break;
@@ -190,7 +187,7 @@ namespace Holy_War.Actors.UserActors
             SetState(UserActorState.ContextMenu);
         }
 
-        private int Attack(UserActorWithZones userActorToAttack)
+        private int Attack(UserActorWithStats userActorToAttack)
         {
             var fullAttackPower = Stats.GetAttackPower();
 

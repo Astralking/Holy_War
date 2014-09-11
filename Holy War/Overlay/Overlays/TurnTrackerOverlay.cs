@@ -22,12 +22,12 @@ namespace Holy_War.Overlay.Overlays
         private float _mFadeIncrement = 0.05f;
         private double _mFadeDelay = .035;
 
-        public TurnTrackerOverlay()
+        public TurnTrackerOverlay(int totalTeams)
         {
             CurrentTurn = 1;
             CurrentTeam = (Team)1;
 
-            _totalTeams = Enum.GetNames(typeof(Team)).Length;
+			_totalTeams = totalTeams;
 			_textToDisplayQueue = new Queue<string>();
         }
 
@@ -75,23 +75,14 @@ namespace Holy_War.Overlay.Overlays
 		{
 			if (_textToDisplayQueue.Any() && !String.IsNullOrEmpty(_textToDisplayQueue.Peek()))
 			{
-				//Decrement the delay by the number of seconds that have elapsed since
-				//the last time that the Update method was called
 				_mFadeDelay -= gameTime.ElapsedGameTime.TotalSeconds;
 
-				//If the Fade delays has dropped below zero, then it is time to 
-				//fade in/fade out the image a little bit more.
 				if (_mFadeDelay <= 0)
 				{
-					//Reset the Fade delay
 					_mFadeDelay = .035;
 
-					//Increment/Decrement the fade value for the image
 					_mAlphaValue += _mFadeIncrement;
 
-					//If the AlphaValue is equal or above the max Alpha value or
-					//has dropped below or equal to the min Alpha value, then 
-					//reverse the fade
 					if (_mAlphaValue >= 1.5f)
 						_mFadeIncrement *= -1;
 

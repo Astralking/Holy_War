@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using Holy_War.Actors;
 using Holy_War.Actors.Stats;
+using Holy_War.Actors.UserActors.BoxActors;
 using Holy_War.Actors.UserActors;
 using Holy_War.Actors.UserActors.UserActorImplementations;
 using Holy_War.Enumerations;
@@ -22,37 +23,41 @@ namespace Holy_War.Worlds
 {
     public class World
     {
-        public Tile[,] TerrainMapArray { get; private set; }
-        public Tile[,] GroundMapArray { get; private set; }
+        public ITile[,] TerrainMapArray { get; private set; }
+		public IUserActor[,] GroundMapArray { get; private set; }
         public SelectionBoxActor SelectionBox { get; private set; }
         public IUserActor SelectedUserActor { get; private set; }
         public List<string> TextureNames { get; private set; }
         public TurnTrackerOverlay TurnTracker { get; private set; }
+		public ActorStatusOverlay ActorStatusOverlay { get; private set; }
+		public DamageOverlay DamageOverlay { get; private set; }
 
         public int WidthInTiles { get; private set; }
         public int HeightInTiles { get; private set; }
 
-        private ContentManager _contentManager;
-
         public World(int height, int width, List<string> texturesNameList)
         {
-            TerrainMapArray = new Tile[height, width];
-            GroundMapArray = new Tile[height, width];
+            TerrainMapArray = new ITile[height, width];
+            GroundMapArray = new IUserActor[height, width];
             WidthInTiles = width;
             HeightInTiles = height;
             TextureNames = texturesNameList;
-            TurnTracker = new TurnTrackerOverlay();
+            TurnTracker = new TurnTrackerOverlay(2);
+			ActorStatusOverlay = new ActorStatusOverlay();
+			DamageOverlay = new DamageOverlay();
         }
-
 
         public void SelectUserActorAtSelectionBox()
         {
-            var actorToSelect =
-                GroundMapArray[SelectionBox.ScreenLocation.X, SelectionBox.ScreenLocation.Y] as UserActorWithZones;
+            var actorToSelect = GroundMapArray[SelectionBox.ScreenLocation.X, SelectionBox.ScreenLocation.Y];
 
             if (actorToSelect != null && IsCurrentlySelectableUserActor(actorToSelect))
             {
-                actorToSelect.HighlightZone(actorToSelect.MovementZone);
+				var actorWithZones = actorToSelect as UserActorWithStats;
+				
+				if(actorWithZones != null)
+					actorWithZones.HighlightZone(actorWithZones.MovementZone);
+
                 SelectedUserActor = actorToSelect;
                 SetSelectionBoxVisibile(false);
             }
@@ -82,6 +87,8 @@ namespace Holy_War.Worlds
                 new Point(0, 0),
                 Layer.Zones);
 
+			SelectionBox.OnHighlight += ActorStatusOverlay.OnSelectionHightlighted;
+
             SelectSelectionBox();
         }
 
@@ -91,6 +98,7 @@ namespace Holy_War.Worlds
             DrawActors(spriteBatch);
 
             TurnTracker.Draw(spriteBatch);
+			ActorStatusOverlay.Draw(spriteBatch);
             SelectionBox.Draw(spriteBatch);
         }
 
@@ -102,6 +110,7 @@ namespace Holy_War.Worlds
                 .ToList();
 
             TurnTracker.Update(gameTime);
+			SelectedUserActor.Update(gameTime);
 
             if (!actors.Any(actor => actor.Updated))
                 return;
@@ -113,7 +122,7 @@ namespace Holy_War.Worlds
         {
             foreach (var tile in actors.Where(actor => actor.Updated))
             {
-                var userActor = tile as UserActorWithZones;
+                var userActor = tile as UserActorWithStats;
 
                 if (userActor != null && userActor.Dead)
                     RemoveTileInArray(tile);
@@ -138,7 +147,7 @@ namespace Holy_War.Worlds
             return actors
                 .Where(actor =>
                 {
-                    var userActor = actor as UserActorWithZones;
+                    var userActor = actor as UserActorWithStats;
                     return userActor != null && userActor.Stats.Team == TurnTracker.CurrentTeam;
                 })
                 .All(actor => actor.TurnLocked);
@@ -165,139 +174,22 @@ namespace Holy_War.Worlds
 
         private void InitialiseActors()
         {
-            var defaultMenuActionList = new List<IMenuAction>
-            {
-                new EndTurnMenuAction("End Turn"),
-                new AttackMenuAction("Attack")
-            };
+			int x = 0, y = 0;
 
-            GroundMapArray[0, 0] = new Monk(
-                defaultMenuActionList,
-                new ActorStats(
-                    primaryStat: PrimaryStat.Dexterity, 
-                    attackType: AttackType.Blunt, 
-                    armorType: ArmorType.None, 
-                    team: Team.Blue, 
-                    hp:10,
-                    strength: 3, 
-                    dexterity: 6, 
-                    intelligence: 5, 
-                    attackRange: 1, 
-                    movement: 4),
-                new Point(0, 0),
-                Layer.Ground);
+			GroundMapArray[x, y] = UserActorFactory.Create("Monk", Team.Blue, new Point(x++, y));
+			GroundMapArray[x, y] = UserActorFactory.Create("Warrior", Team.Blue, new Point(x++, y));
+			GroundMapArray[x, y] = UserActorFactory.Create("Archer", Team.Blue, new Point(x++, y));
+			GroundMapArray[x, y] = UserActorFactory.Create("Sorcerer", Team.Blue, new Point(x++, y));
+			GroundMapArray[x, y] = UserActorFactory.Create("Assassin", Team.Blue, new Point(x++, y));
 
-            GroundMapArray[1, 0] = new Warrior(
-                defaultMenuActionList,
-                new ActorStats(
-                    primaryStat: PrimaryStat.Strength, 
-                    attackType: AttackType.Slashing, 
-                    armorType: ArmorType.Medium, 
-                    team: Team.Blue, 
-                    hp: 10, 
-                    strength: 5, 
-                    dexterity: 5, 
-                    intelligence: 5, 
-                    attackRange: 1, 
-                    movement: 4),
-                new Point(1, 0),
-                Layer.Ground); 
+			x = 0;
+			y = 5;
 
-            GroundMapArray[2, 0] = new Archer(
-                defaultMenuActionList,
-                new ActorStats(
-                    primaryStat: PrimaryStat.Dexterity, 
-                    attackType: AttackType.Piercing, 
-                    armorType: ArmorType.Light, 
-                    team: Team.Blue, 
-                    hp: 10, 
-                    strength: 5, 
-                    dexterity: 5, 
-                    intelligence: 5, 
-                    attackRange: 2, 
-                    movement: 4),
-                new Point(2, 0),
-                Layer.Ground); 
-
-            GroundMapArray[3, 0] = new Sorcerer(
-                defaultMenuActionList,
-                new ActorStats(
-                    primaryStat: PrimaryStat.Dexterity, 
-                    attackType: AttackType.Magical, 
-                    armorType: ArmorType.None, 
-                    team: Team.Blue, 
-                    hp: 10, 
-                    strength: 5, 
-                    dexterity: 5, 
-                    intelligence: 7, 
-                    attackRange: 1, 
-                    movement: 4),
-                new Point(3, 0),
-                Layer.Ground);
-
-            GroundMapArray[3, 3] = new Monk(
-                defaultMenuActionList,
-                new ActorStats(
-                    primaryStat: PrimaryStat.Strength, 
-                    attackType: AttackType.Blunt, 
-                    armorType: ArmorType.None, 
-                    team: Team.Red, 
-                    hp: 10, 
-                    strength: 5, 
-                    dexterity: 5, 
-                    intelligence: 5, 
-                    attackRange: 1, 
-                    movement: 4),
-                new Point(3, 3),
-                Layer.Ground);
-
-            GroundMapArray[3, 4] = new Warrior(
-                defaultMenuActionList,
-                new ActorStats(
-                    primaryStat: PrimaryStat.Strength, 
-                    attackType: AttackType.Blunt, 
-                    armorType: ArmorType.None, 
-                    team: Team.Red, 
-                    hp: 10, 
-                    strength: 5, 
-                    dexterity: 5, 
-                    intelligence: 5, 
-                    attackRange: 1, 
-                    movement: 4),
-                new Point(3, 4),
-                Layer.Ground);
-
-            GroundMapArray[3, 5] = new Archer(
-                defaultMenuActionList,
-                new ActorStats(
-                    primaryStat: PrimaryStat.Strength, 
-                    attackType: AttackType.Blunt, 
-                    armorType: ArmorType.None, 
-                    team: Team.Red, 
-                    hp: 10, 
-                    strength: 5, 
-                    dexterity: 5, 
-                    intelligence: 5, 
-                    attackRange: 1, 
-                    movement: 4),
-                new Point(3, 5),
-                Layer.Ground);
-
-            GroundMapArray[3, 5] = new Sorcerer(
-                defaultMenuActionList,
-                new ActorStats(
-                    primaryStat: PrimaryStat.Strength, 
-                    attackType: AttackType.Blunt, 
-                    armorType: ArmorType.None, 
-                    team: Team.Red, 
-                    hp: 10, 
-                    strength: 5, 
-                    dexterity: 5, 
-                    intelligence: 5, 
-                    attackRange: 1, 
-                    movement: 4),
-                new Point(3, 5),
-                Layer.Ground);
+			GroundMapArray[x, y] = UserActorFactory.Create("Monk", Team.Red, new Point(x++, y));
+			GroundMapArray[x, y] = UserActorFactory.Create("Warrior", Team.Red, new Point(x++, y));
+			GroundMapArray[x, y] = UserActorFactory.Create("Archer", Team.Red, new Point(x++, y));
+			GroundMapArray[x, y] = UserActorFactory.Create("Sorcerer", Team.Red, new Point(x++, y));
+			GroundMapArray[x, y] = UserActorFactory.Create("Assassin", Team.Red, new Point(x++, y));
         }
 
         private void DrawGround(SpriteBatch spriteBatch)
@@ -321,8 +213,8 @@ namespace Holy_War.Worlds
                 {
                     var tile = GroundMapArray[i, j];
 
-                    if (tile != null)
-                        tile.Draw(spriteBatch);
+					if(tile != null)
+						tile.Draw(spriteBatch);
                 }
             }
         }
@@ -334,8 +226,8 @@ namespace Holy_War.Worlds
             if (tile == null)
                 return;
 
-            GroundMapArray[tile.CurrentGridLocation.X, tile.CurrentGridLocation.Y] = null;
-            GroundMapArray[tile.ScreenLocation.X, tile.ScreenLocation.Y] = tile;
+            GroundMapArray[tile.SavedGridLocation.X, tile.SavedGridLocation.Y] = null;
+			GroundMapArray[userActor.ScreenLocation.X, userActor.ScreenLocation.Y] = userActor;
         }
 
         private void RemoveTileInArray(IUserActor userActor)
@@ -343,9 +235,9 @@ namespace Holy_War.Worlds
             GroundMapArray[userActor.ScreenLocation.X, userActor.ScreenLocation.Y] = null;
         }
 
-        private bool IsCurrentlySelectableUserActor(UserActorWithZones userActor)
+        private bool IsCurrentlySelectableUserActor(IUserActor userActor)
 	    {
-	        return userActor.Stats.Team == TurnTracker.CurrentTeam && !userActor.TurnLocked;
+	        return userActor.Team == TurnTracker.CurrentTeam && !userActor.TurnLocked;
 	    }
 	}
 }

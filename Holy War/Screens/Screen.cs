@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Holy_War.Screens
 {
-    public abstract class Screen
+    public abstract class Screen : IScreen
     {
         #region Fields and Properties
 
@@ -55,7 +55,7 @@ namespace Holy_War.Screens
         public ScreenManager ScreenManager
         {
             get { return screenManager; }
-            internal set { screenManager = value; }
+            set { screenManager = value; }
         }
         ScreenManager screenManager;
 

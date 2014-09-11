@@ -33,3 +33,38 @@ C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors
 C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\SorcererRed.xnb
 C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\WarriorBlue.xnb
 C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\WarriorRed.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\BlankActor.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\BlueActor.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\RedActor.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Boxes\BlueHighlightBox.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Boxes\RedHighlightBox.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Boxes\SelectionBox.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Menus\ContextMenu\ContextMenuBottom.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Menus\ContextMenu\ContextMenuSection.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Menus\ContextMenu\ContextMenuTop.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Menus\SelectionArrow.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Boxes\TargetBox.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\ArcherBlue.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\ArcherRed.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\AssassinBlue.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\AssassinRed.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\MonkBlue.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\MonkRed.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\SorcererBlue.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\SorcererRed.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\WarriorBlue.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\WarriorRed.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Fonts\HeadingFont.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Fonts\ContextMenuFont.xnb
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\BlankActor.png
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\BlueActor.png
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\RedActor.png
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Boxes\BlueHighlightBox.png
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Boxes\RedHighlightBox.png
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Boxes\SelectionBox.png
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile.png
+A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\IgnoreMe.dll
+A:\Projects\HolyWar\Holy_War\Content\Content\obj\PSM\Content.csprojResolveAssemblyReference.cache
+A:\Projects\HolyWar\Holy_War\Content\Content\obj\PSM\Microsoft.Xna.Framework.RuntimeProfile.txt
+A:\Projects\HolyWar\Holy_War\Content\Content\obj\PSM\IgnoreMe.dll

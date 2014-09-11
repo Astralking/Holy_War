@@ -9,6 +9,6 @@ namespace Holy_War.Menus.MenuActions
     public interface IMenuAction
     {
         string DisplayText { get; set; }
-        void Execute(UserActorWithZones userActor);
+        void Execute(UserActorWithStats userActor);
     }
 }

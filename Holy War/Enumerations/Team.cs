@@ -8,6 +8,8 @@ namespace Holy_War.Enumerations
 {
     public enum Team
     {
+		[Description("Neutral")]
+		Neutral = 0,
         [Description("Blue")]
         Blue = 1,
         [Description("Red")]

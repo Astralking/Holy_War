@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Holy_War.Input
 {
-	public class InGameInputHandler : InputHandler
+	public class InGameInputHandler : InputHandler, IInputHandler
 	{  
 		public InGameInputHandler(ContentManager contentManager)
 		{

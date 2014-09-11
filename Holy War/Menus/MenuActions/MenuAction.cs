@@ -11,7 +11,7 @@ namespace Holy_War.Menus.MenuActions
 
         public string DisplayText { get; set; }
 
-        public virtual void Execute(UserActorWithZones userActor)
+        public virtual void Execute(UserActorWithStats userActor)
         {
         }
     }

@@ -13,7 +13,7 @@ namespace Holy_War.Tiles
        
         internal Point _location;
 	    internal Point _newGridLocation;
-        internal Point _currentGridLocation;
+        internal Point _savedGridLocation;
 
 	    internal virtual Point ScreenLocation
 	    {
@@ -30,12 +30,12 @@ namespace Holy_War.Tiles
 	        }
 	    }
 
-        public Point CurrentGridLocation { get { return _currentGridLocation; } }
+        public Point SavedGridLocation { get { return _savedGridLocation; } }
 
         protected Tile(Texture2D texture, Point location, Layer layer): base(texture, layer)
 		{
 		    _location = location;
-		    _currentGridLocation = location;
+		    _savedGridLocation = location;
 		}
 
 	    public static int GetDefaultTileWidth()

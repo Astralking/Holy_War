@@ -12,7 +12,7 @@ namespace Holy_War.Menus.MenuActions
         {
         }
 
-        public override void Execute(UserActorWithZones userActor)
+        public override void Execute(UserActorWithStats userActor)
         {
             userActor.EndTurn();
 

@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Holy_War.Input
 {
-	public class InputHandler
+	public abstract class InputHandler
 	{
         public static Device ActiveDevice { get { return Device.Keyboard; } }
         public static MouseState CurrentMouseState { get { return Mouse.GetState(); } }
