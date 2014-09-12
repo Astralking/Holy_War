@@ -30,7 +30,7 @@ namespace Holy_War.Tiles
                 new Vector2(0, 0), 
                 1f, 
                 SpriteEffects.None, 
-                Converter.LayerToFloat(Layer));
+                Converter.LayerTofloat(Layer));
         }
     }
 }

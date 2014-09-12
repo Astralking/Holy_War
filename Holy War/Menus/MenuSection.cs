@@ -44,7 +44,7 @@ namespace Holy_War.Menus
                 new Vector2(0, 0),
                 1f,
                 SpriteEffects.None,
-                Converter.LayerToFloat(Layer));
+                Converter.LayerTofloat(Layer));
         }
 
         public void UpdatePositionByPixels(Vector2 positionOffset)

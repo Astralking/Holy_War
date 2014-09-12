@@ -23,7 +23,7 @@ namespace Holy_War.Worlds
 {
     public class World
     {
-        public ITile[,] TerrainMapArray { get; private set; }
+        public ITerrain[,] TerrainMapArray { get; private set; }
 		public IUserActor[,] GroundMapArray { get; private set; }
         public SelectionBoxActor SelectionBox { get; private set; }
         public IUserActor SelectedUserActor { get; private set; }
@@ -37,7 +37,7 @@ namespace Holy_War.Worlds
 
         public World(int height, int width, List<string> texturesNameList)
         {
-            TerrainMapArray = new ITile[height, width];
+			TerrainMapArray = new ITerrain[height, width];
             GroundMapArray = new IUserActor[height, width];
             WidthInTiles = width;
             HeightInTiles = height;
@@ -53,10 +53,13 @@ namespace Holy_War.Worlds
 
             if (actorToSelect != null && IsCurrentlySelectableUserActor(actorToSelect))
             {
-				var actorWithZones = actorToSelect as UserActorWithStats;
+				var actorWithStats = actorToSelect as UserActorWithStats;
 				
-				if(actorWithZones != null)
-					actorWithZones.HighlightZone(actorWithZones.MovementZone);
+				if(actorWithStats != null)
+				{
+					actorWithStats.HighlightZone(actorWithStats.MovementZone);
+					actorWithStats.TargetBoxActor.OnHighlight += ActorStatusOverlay.OnTargetHightlighted;
+				}
 
                 SelectedUserActor = actorToSelect;
                 SetSelectionBoxVisibile(false);
@@ -68,7 +71,7 @@ namespace Holy_War.Worlds
             if (SelectedUserActor != null)
                 SelectionBox.SetScreenLocation(SelectedUserActor.ScreenLocation);
 
-            SelectedUserActor = SelectionBox;
+	        SelectedUserActor = SelectionBox;
             SetSelectionBoxVisibile(true);
         }
 
@@ -167,7 +170,8 @@ namespace Holy_War.Worlds
                 {
                     TerrainMapArray[i, j] = new Grassland(
                         SpriteManager.Textures["Terrain/GrassTile"],
-                        new Point(i, j));
+                        new Point(i, j),
+						2f);
                 }
             }
         }

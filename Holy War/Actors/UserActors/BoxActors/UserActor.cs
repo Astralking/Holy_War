@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Xml.Schema;
-using Holy_War.Actors.Stats;
-using Holy_War.Enumerations;
-using Holy_War.Helpers;
-using Holy_War.Managers;
-using Holy_War.Menus.ContextMenus;
-using Holy_War.Menus.MenuActions;
-using Holy_War.Sprites;
-using Holy_War.Tiles;
-using Holy_War.Zones;
+﻿using Holy_War.Enumerations;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -59,14 +48,12 @@ namespace Holy_War.Actors.UserActors
 
         public override void Move(Point direction, GameTime gameTime)
         {
-            //if (ScreenLocation + direction == StartingPosition)
             SetScreenLocation(ScreenLocation + direction);
         }
 
         public override void Action()
         {
             GameScreen.CurrentWorld.SelectUserActorAtSelectionBox();
-            //StartingPosition = ScreenLocation;  
         }
 
         public virtual void Back()

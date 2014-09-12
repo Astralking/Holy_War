@@ -11,64 +11,67 @@ namespace Holy_War.Overlay.Overlays
     public class ActorStatusOverlay : Overlay
     {
 		private bool _drawn;
-		UserActorWithStats currentSelectionUserActor;
-		UserActorWithStats currentTargetUserActor;
+		UserActorWithStats _currentSelectionUserActor;
+		UserActorWithStats _currentTargetUserActor;
 		
         public override void Draw(SpriteBatch spriteBatch)
         {
-			if (currentSelectionUserActor != null)
+			if (_currentSelectionUserActor != null)
 			{
 				spriteBatch.DrawString(SpriteManager.Fonts["Fonts/ContextMenuFont"],
-					 currentSelectionUserActor.Stats.HP.ToString(),
+					 _currentSelectionUserActor.Stats != null
+						? "HP: " + _currentSelectionUserActor.Stats.HP.ToString() 
+						: string.Empty,
 					 new Vector2(ScreenCentre.X / 2, ScreenCentre.Y + (ScreenCentre.Y / 2)),
 					 Color.Black,
 					 0f,
 					 new Vector2(0, 0),
 					 1f,
 					 SpriteEffects.None,
-					 Converter.LayerToFloat(Layer.MasterText));
+					 Converter.LayerTofloat(Layer.MasterText));
 			}
 
-			if (currentSelectionUserActor != null)
+			if (_currentTargetUserActor != null)
 			{
 				spriteBatch.DrawString(SpriteManager.Fonts["Fonts/ContextMenuFont"],
-					 currentTargetUserActor.Stats.HP.ToString(),
-					 new Vector2(ScreenCentre.X / 2, ScreenCentre.Y + (ScreenCentre.Y / 2)),
-					 Color.Black,
-					 0f,
-					 new Vector2(0, 0),
-					 1f,
-					 SpriteEffects.None,
-					 Converter.LayerToFloat(Layer.MasterText));
+					_currentTargetUserActor.Stats != null 
+						? "HP: " + _currentTargetUserActor.Stats.HP.ToString() 
+						: string.Empty,
+					new Vector2(ScreenCentre.X + (ScreenCentre.X / 2), ScreenCentre.Y + (ScreenCentre.Y / 2)),
+					Color.Black,
+					0f,
+					new Vector2(0, 0),
+					1f,
+					SpriteEffects.None,
+					Converter.LayerTofloat(Layer.MasterText));
 			}
 		}
-
-        public override void Update(GameTime gameTime)
-        {
-            base.Update(gameTime);
-        }
 
 		public void OnSelectionHightlighted(object sender, OnHighlightEventArgs e)
 		{
 			var userActor = sender as UserActorWithStats;
 
-			if (currentSelectionUserActor != userActor)
+			if (userActor != null)
 			{
-				currentSelectionUserActor = userActor;
-				UpdateStats();
+				if (_currentSelectionUserActor != null && _currentSelectionUserActor != userActor)
+					_currentSelectionUserActor.HighlightZone(null);
+				else
+					userActor.HighlightZone(userActor.MovementZone);
+
+				_currentSelectionUserActor = userActor;
 			}
+			else
+				_currentSelectionUserActor.HighlightZone(null);
+
 		}
 
 		public void OnTargetHightlighted(object sender, OnHighlightEventArgs e)
 		{
 			var userActor = sender as UserActorWithStats;
 
-			if (currentTargetUserActor != userActor)
-			{
-				currentTargetUserActor = userActor;
-				UpdateStats();
-			}
+			_currentTargetUserActor = userActor;
 		}
+
 		private void UpdateStats()
 		{
 		}

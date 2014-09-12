@@ -16,7 +16,7 @@ namespace Holy_War.Zones
             Initialise(origin.X, origin.Y);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             foreach (var highlightTile in Grid
                 .Cast<HighlightTile>()

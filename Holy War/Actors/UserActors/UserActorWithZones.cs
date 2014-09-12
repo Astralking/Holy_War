@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Holy_War.Actors.Stats;
+using Holy_War.Actors.UserActors.BoxActors;
 using Holy_War.Enumerations;
 using Holy_War.Enumerations.ActorStats;
 using Holy_War.Helpers;
@@ -17,11 +18,11 @@ namespace Holy_War.Actors.UserActors
         private readonly List<IMenuAction> _menuActions;
         private ContextMenu _contextMenu;
         private UserActorState _state;
-        private BoxActors.TargetBoxActor _targetBoxActor;
         private IZone _activeZone;
 
         public bool Dead { get; private set; }
         public ActorStats Stats { get; private set; }
+		public TargetBoxActor TargetBoxActor { get; private set; }
         public IZone MovementZone { get; private set; }
         public IZone AttackZone { get; private set; }
 
@@ -34,6 +35,11 @@ namespace Holy_War.Actors.UserActors
 
             MovementZone = new MovementZone(stats.Movement, location);
             AttackZone = new AttackZone(stats.AttackRange, location);
+
+			TargetBoxActor = new BoxActors.TargetBoxActor(
+				SpriteManager.Textures["Boxes/TargetBox"],
+				ScreenLocation,
+				Layer.Zones);
         }
 
         public void ResetZoneOrigins(Point newZoneOrigin)
@@ -47,14 +53,22 @@ namespace Holy_War.Actors.UserActors
         {
             DrawZones(spriteBatch);
 
-            if (_targetBoxActor != null)
-                _targetBoxActor.Draw(spriteBatch);
+            if (TargetBoxActor != null)
+                TargetBoxActor.Draw(spriteBatch);
 
             if (_contextMenu != null)
                 _contextMenu.Draw(spriteBatch);
 
             base.Draw(spriteBatch);
         }
+
+		public override void Update(GameTime gameTime)
+		{
+			if (TargetBoxActor != null && TargetBoxActor.Visible)
+				TargetBoxActor.Update(gameTime);
+
+			base.Update(gameTime);
+		}
 
         public override void Move(Point direction, GameTime gameTime)
         {
@@ -65,8 +79,8 @@ namespace Holy_War.Actors.UserActors
                         SetScreenLocation(ScreenLocation + direction);
                     break;
                 case UserActorState.Attacking:
-                    if (_targetBoxActor.ScreenLocation + direction == _targetBoxActor.StartingPosition || AttackZone.PositionIsInZone(_targetBoxActor.ScreenLocation + direction))
-                        _targetBoxActor.SetScreenLocation(_targetBoxActor.ScreenLocation + direction);
+                    if (TargetBoxActor.ScreenLocation + direction == TargetBoxActor.StartingPosition || AttackZone.PositionIsInZone(TargetBoxActor.ScreenLocation + direction))
+                        TargetBoxActor.SetScreenLocation(TargetBoxActor.ScreenLocation + direction);
                     break;
                 case UserActorState.ContextMenu:
                     _contextMenu.Move(direction, gameTime);
@@ -96,7 +110,7 @@ namespace Holy_War.Actors.UserActors
                     {
                         var userActorToAttack =
                             GameScreen.CurrentWorld.GroundMapArray[
-                                _targetBoxActor.ScreenLocation.X, _targetBoxActor.ScreenLocation.Y] as UserActorWithStats;
+                                TargetBoxActor.ScreenLocation.X, TargetBoxActor.ScreenLocation.Y] as UserActorWithStats;
 
                         if (userActorToAttack != null)
                         {
@@ -117,8 +131,8 @@ namespace Holy_War.Actors.UserActors
             if (_contextMenu != null)
                 _contextMenu.Hide();
 
-            if (_targetBoxActor != null)
-                _targetBoxActor.Hide();
+			if (TargetBoxActor != null)
+				TargetBoxActor.Visible = false;
 
             SetState(UserActorState.Moving);
         
@@ -151,12 +165,8 @@ namespace Holy_War.Actors.UserActors
                 case UserActorState.Moving:
                     break;
                 case UserActorState.Attacking:
-                    _targetBoxActor = new BoxActors.TargetBoxActor(
-                        SpriteManager.Textures["Boxes/TargetBox"],
-                        ScreenLocation,
-                        Layer.Zones);
-
-                    _targetBoxActor.Show();
+					TargetBoxActor.SetScreenLocation(ScreenLocation);
+					TargetBoxActor.Visible = true;
                     break;
                 case UserActorState.ContextMenu:
                     _contextMenu.Show();
@@ -169,8 +179,8 @@ namespace Holy_War.Actors.UserActors
         {
             Updated = true;
 
-            if(_targetBoxActor != null)
-                _targetBoxActor.Hide();
+			if (TargetBoxActor != null)
+				TargetBoxActor.Visible = false;
 
             HighlightZone(null);
             ResetZoneOrigins(ScreenLocation);

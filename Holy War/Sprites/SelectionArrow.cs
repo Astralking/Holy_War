@@ -30,7 +30,7 @@ namespace Holy_War.Sprites
                 new Vector2(0,0),
                 1f,
                 SpriteEffects.FlipHorizontally,
-                Converter.LayerToFloat(Layer.MasterText));
+                Converter.LayerTofloat(Layer.MasterText));
         }
     }
 }

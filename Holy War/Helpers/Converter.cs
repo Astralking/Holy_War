@@ -74,7 +74,7 @@ namespace Holy_War.Helpers
             return coord * Tile.GetDefaultTileHeight();
         }
 
-        public static float LayerToFloat(Layer layer)
+        public static float LayerTofloat(Layer layer)
         {
             return (float)layer * 0.1f;
         }

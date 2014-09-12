@@ -5,10 +5,10 @@ using Holy_War.Enumerations;
 
 namespace Holy_War.Tiles.Terrain
 {
-	public class Grassland : Tile, ITile
+	public class Grassland : Terrain, ITerrain
 	{
-		public Grassland(Texture2D texture, Point location)
-			: base(texture, location, Layer.Terrain)
+		public Grassland(Texture2D texture, Point location, float movementCost)
+			: base(texture, location, Layer.Terrain, movementCost)
 		{
 		}
 
@@ -25,7 +25,9 @@ namespace Holy_War.Tiles.Terrain
                 new Vector2(0, 0), 
                 1f, 
                 SpriteEffects.None, 
-                Converter.LayerToFloat(Layer));
+                Converter.LayerTofloat(Layer));
 		}
+
+		public float MovementCost { get { return _movementCost; } }
 	}
 }

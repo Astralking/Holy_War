@@ -37,7 +37,7 @@ namespace Holy_War.Menus
                 new Vector2(0,0),
                 1f,
                 SpriteEffects.None,
-                Converter.LayerToFloat(Layer.MasterText));
+                Converter.LayerTofloat(Layer.MasterText));
 
             if(Selected)
                 _selectionArrow.Draw(spriteBatch, PositionInPixels);

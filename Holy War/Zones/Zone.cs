@@ -35,7 +35,7 @@ namespace Holy_War.Zones
         {
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
         }
 

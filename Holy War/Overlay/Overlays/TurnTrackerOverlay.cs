@@ -67,7 +67,7 @@ namespace Holy_War.Overlay.Overlays
 					new Vector2(spriteFontSize.X / 2, spriteFontSize.Y / 2),
                     1f * GameScreen.Camera.Zoom,
 					SpriteEffects.None,
-					Converter.LayerToFloat(Layer.Master));
+					Converter.LayerTofloat(Layer.Master));
 			}
 		}
 
