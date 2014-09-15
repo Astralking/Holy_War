@@ -48,6 +48,7 @@
     <Compile Include="Actors\UserActors\UserActorImplementations\Archer.cs" />
     <Compile Include="Actors\UserActors\UserActorImplementations\Warrior.cs" />
     <Compile Include="Actors\UserActors\UserActorWithZones.cs" />
+    <Compile Include="Algorithms\DijkstrasAlgorithm.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="Enumerations\ActorStats\ArmorType.cs" />
     <Compile Include="Enumerations\ActorStats\AttackType.cs" />
@@ -88,6 +89,9 @@
     <Compile Include="Screens\Screen.cs" />
     <Compile Include="Sprites\SelectionArrow.cs" />
     <Compile Include="Tiles\ITile.cs" />
+    <Compile Include="Tiles\Terrain\GrasslandPath.cs" />
+    <Compile Include="Tiles\Terrain\ITerrain.cs" />
+    <Compile Include="Tiles\Terrain\Terrain.cs" />
     <Compile Include="Tiles\Terrain\TerrainFactory.cs" />
     <Compile Include="Worlds\World.cs" />
     <Compile Include="Program.cs" />

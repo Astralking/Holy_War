@@ -10,9 +10,8 @@ namespace Holy_War.Overlay.Overlays
 {
     public class ActorStatusOverlay : Overlay
     {
-		private bool _drawn;
-		UserActorWithStats _currentSelectionUserActor;
-		UserActorWithStats _currentTargetUserActor;
+		private UserActorWithStats _currentSelectionUserActor;
+		private UserActorWithStats _currentTargetUserActor;
 		
         public override void Draw(SpriteBatch spriteBatch)
         {
@@ -51,17 +50,23 @@ namespace Holy_War.Overlay.Overlays
 		{
 			var userActor = sender as UserActorWithStats;
 
-			if (userActor != null)
-			{
-				if (_currentSelectionUserActor != null && _currentSelectionUserActor != userActor)
-					_currentSelectionUserActor.HighlightZone(null);
-				else
-					userActor.HighlightZone(userActor.MovementZone);
+		    if (userActor != null)
+		    {
+		        if (_currentSelectionUserActor != null && _currentSelectionUserActor != userActor)
+		            _currentSelectionUserActor.HighlightZone(null);
+		        else
+		            userActor.HighlightZone(userActor.MovementZone);
 
-				_currentSelectionUserActor = userActor;
-			}
-			else
-				_currentSelectionUserActor.HighlightZone(null);
+		        _currentSelectionUserActor = userActor;
+		    }
+		    else
+		    {
+		        if (_currentSelectionUserActor == null) 
+                    return;
+
+		        _currentSelectionUserActor.HighlightZone(null);
+		        _currentSelectionUserActor = null;
+		    }
 
 		}
 
@@ -70,10 +75,6 @@ namespace Holy_War.Overlay.Overlays
 			var userActor = sender as UserActorWithStats;
 
 			_currentTargetUserActor = userActor;
-		}
-
-		private void UpdateStats()
-		{
 		}
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Holy_War.Algorithms;
 using Holy_War.Enumerations;
 using Holy_War.Managers;
 using Holy_War.Tiles;
@@ -30,34 +31,57 @@ namespace Holy_War.Zones
             CalculateGrid(newOrigin.X, newOrigin.Y);
         }
 
-        public override void CalculateGrid(int x, int y)
+        public override void CalculateGrid(int originX, int originY)
         {
             ResetGrid();
 
-            for (var i = x - _distance; i <= x + _distance; ++i)
+            //for (var i = originX - _distance; i <= originX + _distance; ++i)
+            //{
+            //    for (var j = originY - _distance; j <= originY + _distance; ++j)
+            //    {
+            //        if (i < 0 || j < 0 || i >= GameScreen.CurrentWorld.WidthInTiles || j >= GameScreen.CurrentWorld.HeightInTiles) 
+            //            continue;
+
+            //        if (Math.Abs(originX - i) + Math.Abs(originY - j) > _distance) 
+            //            continue;
+
+            //        if (i == originX && j == originY) 
+            //            continue;
+
+            //        Grid[i, j] = new HighlightTile(
+            //            SpriteManager.Textures["Boxes/BlueHighlightBox"],
+            //            new Point(i, j), 
+            //            Layer.Zones);
+            //    }
+            //}
+
+            var graph = DijkstrasAlgorithm.GenerateZone(new Point(originX, originY), Distance);
+            
+            for (var i = originX - _distance; i < originX + _distance; ++i)
             {
-                for (var j = y - _distance; j <= y + _distance; ++j)
+                for (var j = originY - _distance; j < originY + _distance; ++j)
                 {
-                    if (i < 0 || j < 0 || i >= GameScreen.CurrentWorld.WidthInTiles || j >= GameScreen.CurrentWorld.HeightInTiles) 
+                    if (i < 0 || j < 0 || i >= GameScreen.CurrentWorld.WidthInTiles || j >= GameScreen.CurrentWorld.HeightInTiles)
                         continue;
 
-                    if (Math.Abs(x - i) + Math.Abs(y - j) > _distance) 
+                    if (Math.Abs(originX - i) + Math.Abs(originY - j) > _distance)
                         continue;
 
-                    if (i == x && j == y) 
+                    if (i == originX && j == originY)
                         continue;
 
-                    Grid[i, j] = new HighlightTile(
-                        SpriteManager.Textures["Boxes/BlueHighlightBox"],
-                        new Point(i, j), 
-                        Layer.Zones);
+                    if(graph[i, j].Distance <= Distance)
+                        Grid[i, j] = new HighlightTile(
+                            SpriteManager.Textures["Boxes/BlueHighlightBox"],
+                            new Point(i, j),
+                            Layer.Zones);
                 }
             }
         }
 
-        private void Initialise(int x, int y)
+        private void Initialise(int originX, int originY)
         {
-            CalculateGrid(x, y);
+            CalculateGrid(originX, originY);
         }
     }
 }

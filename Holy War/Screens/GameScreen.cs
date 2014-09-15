@@ -52,7 +52,15 @@ namespace Holy_War
 
             var textureList = new List<string>
 		    {
-                "Terrain/GrassTile",
+                "Terrain/GrassTile/GrassTile",
+                "Terrain/GrassTile/GrassPathWestSouth",
+                "Terrain/GrassTile/GrassPathWestEast",
+                "Terrain/GrassTile/GrassPathSouthNorth",
+                "Terrain/GrassTile/GrassPathNorthWest",
+                "Terrain/GrassTile/GrassPathNorthSouth",
+                "Terrain/GrassTile/GrassPathEastWest",
+                "Terrain/GrassTile/GrassPathEastSouth",
+                "Terrain/GrassTile/GrassPathEastNorth",
                 "Actors/UserActors/BlueActor",
                 "Actors/UserActors/RedActor",
                 "Actors/UserActors/BlankActor",

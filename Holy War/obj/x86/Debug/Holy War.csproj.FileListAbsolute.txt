@@ -117,14 +117,12 @@ C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserAct
 C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Boxes\BlueHighlightBox.xnb
 C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Boxes\RedHighlightBox.xnb
 C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Boxes\SelectionBox.xnb
-C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Terrain\GrassTile.xnb
 C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\BlankActor.png
 C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\BlueActor.png
 C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Actors\UserActors\RedActor.png
 C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Boxes\BlueHighlightBox.png
 C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Boxes\RedHighlightBox.png
 C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Boxes\SelectionBox.png
-C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Terrain\GrassTile.png
 C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\IgnoreMe.dll
 C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Fonts\HeadingFont.xnb
 C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Menus\ContextMenu\ContextMenuBottom.xnb
@@ -200,3 +198,12 @@ A:\Projects\HolyWar\Holy_War\Holy War\bin\Windows\Debug\Content\Fonts\HeadingFon
 A:\Projects\HolyWar\Holy_War\Holy War\bin\Windows\Debug\Content\Fonts\ContextMenuFont.xnb
 A:\Projects\HolyWar\Holy_War\Holy War\bin\Windows\Debug\Holy War.exe
 A:\Projects\HolyWar\Holy_War\Holy War\bin\Windows\Debug\Holy War.pdb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Terrain\GrassTile\GrassPathEastNorth.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Terrain\GrassTile\GrassPathEastSouth.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Terrain\GrassTile\GrassPathEastWest.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Terrain\GrassTile\GrassPathNorthSouth.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Terrain\GrassTile\GrassPathNorthWest.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Terrain\GrassTile\GrassPathSouthNorth.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Terrain\GrassTile\GrassPathWestEast.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Terrain\GrassTile\GrassPathWestSouth.xnb
+C:\Users\joe\Holy War\Holy_War\Holy War\bin\Windows\Debug\Content\Terrain\GrassTile\GrassTile.xnb

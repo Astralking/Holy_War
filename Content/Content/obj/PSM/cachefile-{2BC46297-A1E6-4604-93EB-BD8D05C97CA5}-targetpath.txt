@@ -4,7 +4,6 @@ Content\Actors\UserActors\RedActor.xnb
 Content\Boxes\BlueHighlightBox.xnb
 Content\Boxes\RedHighlightBox.xnb
 Content\Boxes\SelectionBox.xnb
-Content\Terrain\GrassTile.xnb
 Content\Menus\ContextMenu\ContextMenuBottom.xnb
 Content\Menus\ContextMenu\ContextMenuSection.xnb
 Content\Menus\ContextMenu\ContextMenuTop.xnb
@@ -22,10 +21,18 @@ Content\Actors\UserActors\WarriorBlue.xnb
 Content\Actors\UserActors\WarriorRed.xnb
 Content\Fonts\HeadingFont.xnb
 Content\Fonts\ContextMenuFont.xnb
+Content\Terrain\GrassTile\GrassPathEastNorth.xnb
+Content\Terrain\GrassTile\GrassPathEastSouth.xnb
+Content\Terrain\GrassTile\GrassPathEastWest.xnb
+Content\Terrain\GrassTile\GrassPathNorthSouth.xnb
+Content\Terrain\GrassTile\GrassPathNorthWest.xnb
+Content\Terrain\GrassTile\GrassPathSouthNorth.xnb
+Content\Terrain\GrassTile\GrassPathWestEast.xnb
+Content\Terrain\GrassTile\GrassPathWestSouth.xnb
+Content\Terrain\GrassTile\GrassTile.xnb
 Content\Actors\UserActors\BlankActor.png
 Content\Actors\UserActors\BlueActor.png
 Content\Actors\UserActors\RedActor.png
 Content\Boxes\BlueHighlightBox.png
 Content\Boxes\RedHighlightBox.png
 Content\Boxes\SelectionBox.png
-Content\Terrain\GrassTile.png

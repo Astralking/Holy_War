@@ -84,12 +84,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Terrain\GrassTile.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>GrassTile</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Menus\ContextMenu\ContextMenuBottom.png">
@@ -184,6 +178,53 @@
     </Compile>
     <Compile Include="Actors\UserActors\WarriorRed.png">
       <Name>WarriorRed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Terrain\GrassTile\GrassPathEastNorth.png">
+      <Name>GrassPathEastNorth</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Terrain\GrassTile\GrassPathEastSouth.png">
+      <Name>GrassPathEastSouth</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Terrain\GrassTile\GrassPathEastWest.png">
+      <Name>GrassPathEastWest</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Terrain\GrassTile\GrassPathNorthSouth.png">
+      <Name>GrassPathNorthSouth</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Terrain\GrassTile\GrassPathNorthWest.png">
+      <Name>GrassPathNorthWest</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Terrain\GrassTile\GrassPathSouthNorth.png">
+      <Name>GrassPathSouthNorth</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Terrain\GrassTile\GrassPathWestEast.png">
+      <Name>GrassPathWestEast</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Terrain\GrassTile\GrassPathWestSouth.png">
+      <Name>GrassPathWestSouth</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Terrain\GrassTile\GrassTile.png">
+      <Name>GrassTile</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

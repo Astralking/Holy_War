@@ -30,7 +30,7 @@ namespace Holy_War.Actors.UserActors.UserActorImplementations
 				dexterity: 3,
 				intelligence: 3,
 				attackRange: 1,
-				movement: 3);
+				movement: 2);
 		}
 
 		private static List<IMenuAction> GenerateMenuActions()

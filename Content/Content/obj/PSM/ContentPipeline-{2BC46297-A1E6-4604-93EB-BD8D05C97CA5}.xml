@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\BlankActor.xnb</Output>
-      <Time>2014-09-11T10:45:42.0991082+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\BlankActor.xnb</Output>
+      <Time>2014-09-06T20:57:57.8779467+01:00</Time>
     </Item>
     <Item>
       <Source>Actors\UserActors\BlueActor.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\BlueActor.xnb</Output>
-      <Time>2014-09-11T10:45:42.1001083+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\BlueActor.xnb</Output>
+      <Time>2014-09-06T20:57:57.8919475+01:00</Time>
     </Item>
     <Item>
       <Source>Actors\UserActors\RedActor.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\RedActor.xnb</Output>
-      <Time>2014-09-11T10:45:42.1041087+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\RedActor.xnb</Output>
+      <Time>2014-09-06T20:57:57.9099485+01:00</Time>
     </Item>
     <Item>
       <Source>Boxes\BlueHighlightBox.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Boxes\BlueHighlightBox.xnb</Output>
-      <Time>2014-09-11T10:45:42.1131096+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Boxes\BlueHighlightBox.xnb</Output>
+      <Time>2014-09-06T20:57:57.9689519+01:00</Time>
     </Item>
     <Item>
       <Source>Boxes\RedHighlightBox.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Boxes\RedHighlightBox.xnb</Output>
-      <Time>2014-09-11T10:45:42.1131096+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Boxes\RedHighlightBox.xnb</Output>
+      <Time>2014-09-06T20:57:57.9779524+01:00</Time>
     </Item>
     <Item>
       <Source>Boxes\SelectionBox.png</Source>
@@ -52,17 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Boxes\SelectionBox.xnb</Output>
-      <Time>2014-09-11T10:45:42.1141097+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Terrain\GrassTile.png</Source>
-      <Name>Terrain\GrassTile</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile.xnb</Output>
-      <Time>2014-09-11T10:45:42.1191102+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Boxes\SelectionBox.xnb</Output>
+      <Time>2014-09-07T19:00:27.2234696+01:00</Time>
     </Item>
     <Item>
       <Source>Menus\ContextMenu\ContextMenuBottom.png</Source>
@@ -70,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Menus\ContextMenu\ContextMenuBottom.xnb</Output>
-      <Time>2014-09-11T10:45:42.11711+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Menus\ContextMenu\ContextMenuBottom.xnb</Output>
+      <Time>2014-09-07T12:17:35.9419514+01:00</Time>
     </Item>
     <Item>
       <Source>Menus\ContextMenu\ContextMenuSection.png</Source>
@@ -79,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Menus\ContextMenu\ContextMenuSection.xnb</Output>
-      <Time>2014-09-11T10:45:42.1181101+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Menus\ContextMenu\ContextMenuSection.xnb</Output>
+      <Time>2014-09-07T12:17:35.9449516+01:00</Time>
     </Item>
     <Item>
       <Source>Menus\ContextMenu\ContextMenuTop.png</Source>
@@ -88,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Menus\ContextMenu\ContextMenuTop.xnb</Output>
-      <Time>2014-09-11T10:45:42.1181101+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Menus\ContextMenu\ContextMenuTop.xnb</Output>
+      <Time>2014-09-07T12:17:35.9589524+01:00</Time>
     </Item>
     <Item>
       <Source>Menus\SelectionArrow.png</Source>
@@ -97,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Menus\SelectionArrow.xnb</Output>
-      <Time>2014-09-11T10:45:42.1191102+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Menus\SelectionArrow.xnb</Output>
+      <Time>2014-09-07T12:49:31.078491+01:00</Time>
     </Item>
     <Item>
       <Source>Boxes\TargetBox.png</Source>
@@ -106,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Boxes\TargetBox.xnb</Output>
-      <Time>2014-09-11T10:45:42.1151098+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Boxes\TargetBox.xnb</Output>
+      <Time>2014-09-07T19:42:19.7171761+01:00</Time>
     </Item>
     <Item>
       <Source>Actors\UserActors\ArcherBlue.png</Source>
@@ -115,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\ArcherBlue.xnb</Output>
-      <Time>2014-09-11T10:45:42.0941077+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\ArcherBlue.xnb</Output>
+      <Time>2014-09-09T12:23:00.0013385+01:00</Time>
     </Item>
     <Item>
       <Source>Actors\UserActors\ArcherRed.png</Source>
@@ -124,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\ArcherRed.xnb</Output>
-      <Time>2014-09-11T10:45:42.0951078+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\ArcherRed.xnb</Output>
+      <Time>2014-09-09T12:25:19.6023233+01:00</Time>
     </Item>
     <Item>
       <Source>Actors\UserActors\AssassinBlue.png</Source>
@@ -133,8 +124,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\AssassinBlue.xnb</Output>
-      <Time>2014-09-11T10:45:42.097108+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\AssassinBlue.xnb</Output>
+      <Time>2014-09-09T12:25:14.5790359+01:00</Time>
     </Item>
     <Item>
       <Source>Actors\UserActors\AssassinRed.png</Source>
@@ -142,8 +133,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\AssassinRed.xnb</Output>
-      <Time>2014-09-11T10:45:42.0981081+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\AssassinRed.xnb</Output>
+      <Time>2014-09-09T12:23:35.8483889+01:00</Time>
     </Item>
     <Item>
       <Source>Actors\UserActors\MonkBlue.png</Source>
@@ -151,8 +142,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\MonkBlue.xnb</Output>
-      <Time>2014-09-11T10:45:42.1021085+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\MonkBlue.xnb</Output>
+      <Time>2014-09-09T12:23:59.3387324+01:00</Time>
     </Item>
     <Item>
       <Source>Actors\UserActors\MonkRed.png</Source>
@@ -160,8 +151,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\MonkRed.xnb</Output>
-      <Time>2014-09-11T10:45:42.1031086+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\MonkRed.xnb</Output>
+      <Time>2014-09-09T12:24:59.4731719+01:00</Time>
     </Item>
     <Item>
       <Source>Actors\UserActors\SorcererBlue.png</Source>
@@ -169,8 +160,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\SorcererBlue.xnb</Output>
-      <Time>2014-09-11T10:45:42.1061089+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\SorcererBlue.xnb</Output>
+      <Time>2014-09-09T12:23:48.1570929+01:00</Time>
     </Item>
     <Item>
       <Source>Actors\UserActors\SorcererRed.png</Source>
@@ -178,8 +169,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\SorcererRed.xnb</Output>
-      <Time>2014-09-11T10:45:42.107109+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\SorcererRed.xnb</Output>
+      <Time>2014-09-09T12:23:53.7484127+01:00</Time>
     </Item>
     <Item>
       <Source>Actors\UserActors\WarriorBlue.png</Source>
@@ -187,8 +178,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\WarriorBlue.xnb</Output>
-      <Time>2014-09-11T10:45:42.1101093+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\WarriorBlue.xnb</Output>
+      <Time>2014-09-09T12:25:30.1539268+01:00</Time>
     </Item>
     <Item>
       <Source>Actors\UserActors\WarriorRed.png</Source>
@@ -196,8 +187,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\WarriorRed.xnb</Output>
-      <Time>2014-09-11T10:45:42.1111094+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\WarriorRed.xnb</Output>
+      <Time>2014-09-09T12:22:53.1319456+01:00</Time>
     </Item>
     <Item>
       <Source>Fonts\HeadingFont.spritefont</Source>
@@ -205,8 +196,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Fonts\HeadingFont.xnb</Output>
-      <Time>2014-09-11T10:45:42.1161099+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Fonts\HeadingFont.xnb</Output>
+      <Time>2014-09-06T21:05:01.9572026+01:00</Time>
     </Item>
     <Item>
       <Source>Fonts\ContextMenuFont.spritefont</Source>
@@ -214,8 +205,89 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\Fonts\ContextMenuFont.xnb</Output>
-      <Time>2014-09-11T10:45:42.1161099+01:00</Time>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Fonts\ContextMenuFont.xnb</Output>
+      <Time>2014-09-07T16:08:05.4749555+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Terrain\GrassTile\GrassPathEastNorth.png</Source>
+      <Name>Terrain\GrassTile\GrassPathEastNorth</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassPathEastNorth.xnb</Output>
+      <Time>2014-09-13T14:47:37.8046557+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Terrain\GrassTile\GrassPathEastSouth.png</Source>
+      <Name>Terrain\GrassTile\GrassPathEastSouth</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassPathEastSouth.xnb</Output>
+      <Time>2014-09-13T14:47:37.7796543+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Terrain\GrassTile\GrassPathEastWest.png</Source>
+      <Name>Terrain\GrassTile\GrassPathEastWest</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassPathEastWest.xnb</Output>
+      <Time>2014-09-13T14:47:37.8086559+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Terrain\GrassTile\GrassPathNorthSouth.png</Source>
+      <Name>Terrain\GrassTile\GrassPathNorthSouth</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassPathNorthSouth.xnb</Output>
+      <Time>2014-09-13T14:47:37.7996554+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Terrain\GrassTile\GrassPathNorthWest.png</Source>
+      <Name>Terrain\GrassTile\GrassPathNorthWest</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassPathNorthWest.xnb</Output>
+      <Time>2014-09-13T14:47:01.0805552+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Terrain\GrassTile\GrassPathSouthNorth.png</Source>
+      <Name>Terrain\GrassTile\GrassPathSouthNorth</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassPathSouthNorth.xnb</Output>
+      <Time>2014-09-13T14:47:37.7916549+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Terrain\GrassTile\GrassPathWestEast.png</Source>
+      <Name>Terrain\GrassTile\GrassPathWestEast</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassPathWestEast.xnb</Output>
+      <Time>2014-09-13T14:47:37.7836545+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Terrain\GrassTile\GrassPathWestSouth.png</Source>
+      <Name>Terrain\GrassTile\GrassPathWestSouth</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassPathWestSouth.xnb</Output>
+      <Time>2014-09-13T14:47:37.7876547+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Terrain\GrassTile\GrassTile.png</Source>
+      <Name>Terrain\GrassTile\GrassTile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassTile.xnb</Output>
+      <Time>2014-09-06T20:57:58.0449562+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -224,19 +296,15 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>PSM</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>A:\Projects\HolyWar\Holy_War\Content\ContentContent\</RootDirectory>
-      <LoggerRootDirectory>A:\Projects\HolyWar\Holy_War\Content\Content\</LoggerRootDirectory>
-      <IntermediateDirectory>A:\Projects\HolyWar\Holy_War\Content\Content\obj\PSM\</IntermediateDirectory>
-      <OutputDirectory>A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\joe\Holy War\Holy_War\Content\ContentContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\joe\Holy War\Holy_War\Content\Content\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\joe\Holy War\Holy_War\Content\Content\obj\PSM\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files (x86)\MSBuild\MonoGame\v3.0\MonoGameContentProcessors.dll</Key>
         <Value>2014-04-05T22:56:18+01:00</Value>
-      </Assembly>
-      <Assembly>
-        <Key>C:\Windows\assembly\GAC_MSIL\TypeMock.Interceptors\7.4.0.0__3dae460033b8d8e2\TypeMock.Interceptors.dll</Key>
-        <Value>2013-06-04T10:03:13.7844115+01:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
@@ -264,7 +332,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2014-09-04T16:44:56.3915173+01:00</Value>
+        <Value>2014-09-06T20:55:11.6604396+01:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

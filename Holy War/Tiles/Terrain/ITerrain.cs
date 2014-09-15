@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
 
 namespace Holy_War.Tiles.Terrain
 {
@@ -12,18 +13,18 @@ namespace Holy_War.Tiles.Terrain
 
 	public static class TerrainExtension 
 	{
-		public static float[,] GetWeight( this ITerrain[,] terrainArray ) 
+		public static float[,] GetWeight( this ITerrain[,] terrainArray, Point origin, int size)
 		{
-			int xDimension = terrainArray.GetLength(0);
-			int yDimension = terrainArray.GetLength(1);
+            var weightArray = new float[origin.X + size, origin.Y + size];
 
-			var weightArray = new float[xDimension, yDimension];
-
-			for (int i = 0; i < xDimension; i++)
+            for (int i = 0; i < origin.X + size; i++)
 			{
-				for (int j = 0; j < yDimension; j++)
+                for (int j = 0; j < origin.Y + size; j++)
 				{
 					weightArray[i, j] = terrainArray[i, j].MovementCost;
+
+				    if (i == origin.X && j == origin.Y)
+				        weightArray[i, j] = 0;
 				}
 			}
 

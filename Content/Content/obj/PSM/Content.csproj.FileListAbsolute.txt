@@ -4,14 +4,12 @@ C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors
 C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Boxes\BlueHighlightBox.xnb
 C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Boxes\RedHighlightBox.xnb
 C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Boxes\SelectionBox.xnb
-C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile.xnb
 C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\BlankActor.png
 C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\BlueActor.png
 C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Actors\UserActors\RedActor.png
 C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Boxes\BlueHighlightBox.png
 C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Boxes\RedHighlightBox.png
 C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Boxes\SelectionBox.png
-C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile.png
 C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\IgnoreMe.dll
 C:\Users\joe\Holy War\Holy_War\Content\Content\obj\PSM\Content.csprojResolveAssemblyReference.cache
 C:\Users\joe\Holy War\Holy_War\Content\Content\obj\PSM\Microsoft.Xna.Framework.RuntimeProfile.txt
@@ -68,3 +66,12 @@ A:\Projects\HolyWar\Holy_War\Content\Content\bin\PSM\IgnoreMe.dll
 A:\Projects\HolyWar\Holy_War\Content\Content\obj\PSM\Content.csprojResolveAssemblyReference.cache
 A:\Projects\HolyWar\Holy_War\Content\Content\obj\PSM\Microsoft.Xna.Framework.RuntimeProfile.txt
 A:\Projects\HolyWar\Holy_War\Content\Content\obj\PSM\IgnoreMe.dll
+C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassPathEastNorth.xnb
+C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassPathEastSouth.xnb
+C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassPathEastWest.xnb
+C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassPathNorthSouth.xnb
+C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassPathNorthWest.xnb
+C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassPathSouthNorth.xnb
+C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassPathWestEast.xnb
+C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassPathWestSouth.xnb
+C:\Users\joe\Holy War\Holy_War\Content\Content\bin\PSM\Content\Terrain\GrassTile\GrassTile.xnb

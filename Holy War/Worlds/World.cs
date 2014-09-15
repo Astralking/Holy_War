@@ -168,8 +168,14 @@ namespace Holy_War.Worlds
             {
                 for (var j = 0; j < HeightInTiles; j++)
                 {
+                    if(j == 2)
+                        TerrainMapArray[i, j] = new GrasslandPath(
+                            SpriteManager.Textures["Terrain/GrassTile/GrassPathWestEast"],
+                            new Point(i, j),
+                            1f);
+                    else
                     TerrainMapArray[i, j] = new Grassland(
-                        SpriteManager.Textures["Terrain/GrassTile"],
+                        SpriteManager.Textures["Terrain/GrassTile/GrassTile"],
                         new Point(i, j),
 						2f);
                 }
@@ -178,22 +184,22 @@ namespace Holy_War.Worlds
 
         private void InitialiseActors()
         {
-			int x = 0, y = 0;
+			int x = 5, y = 5;
 
-			GroundMapArray[x, y] = UserActorFactory.Create("Monk", Team.Blue, new Point(x++, y));
-			GroundMapArray[x, y] = UserActorFactory.Create("Warrior", Team.Blue, new Point(x++, y));
-			GroundMapArray[x, y] = UserActorFactory.Create("Archer", Team.Blue, new Point(x++, y));
-			GroundMapArray[x, y] = UserActorFactory.Create("Sorcerer", Team.Blue, new Point(x++, y));
-			GroundMapArray[x, y] = UserActorFactory.Create("Assassin", Team.Blue, new Point(x++, y));
+            //GroundMapArray[x, y] = UserActorFactory.Create("Monk", Team.Blue, new Point(x++, y));
+            //GroundMapArray[x, y] = UserActorFactory.Create("Warrior", Team.Blue, new Point(x++, y));
+            GroundMapArray[x, y] = UserActorFactory.Create("Archer", Team.Blue, new Point(x++, y));
+            //GroundMapArray[x, y] = UserActorFactory.Create("Sorcerer", Team.Blue, new Point(x++, y));
+            //GroundMapArray[x, y] = UserActorFactory.Create("Assassin", Team.Blue, new Point(x++, y));
 
-			x = 0;
-			y = 5;
+            //x = 0;
+            //y = 5;
 
-			GroundMapArray[x, y] = UserActorFactory.Create("Monk", Team.Red, new Point(x++, y));
-			GroundMapArray[x, y] = UserActorFactory.Create("Warrior", Team.Red, new Point(x++, y));
-			GroundMapArray[x, y] = UserActorFactory.Create("Archer", Team.Red, new Point(x++, y));
-			GroundMapArray[x, y] = UserActorFactory.Create("Sorcerer", Team.Red, new Point(x++, y));
-			GroundMapArray[x, y] = UserActorFactory.Create("Assassin", Team.Red, new Point(x++, y));
+            //GroundMapArray[x, y] = UserActorFactory.Create("Monk", Team.Red, new Point(x++, y));
+            //GroundMapArray[x, y] = UserActorFactory.Create("Warrior", Team.Red, new Point(x++, y));
+            GroundMapArray[x, y] = UserActorFactory.Create("Archer", Team.Red, new Point(x++, y));
+            //GroundMapArray[x, y] = UserActorFactory.Create("Sorcerer", Team.Red, new Point(x++, y));
+            //GroundMapArray[x, y] = UserActorFactory.Create("Assassin", Team.Red, new Point(x++, y));
         }
 
         private void DrawGround(SpriteBatch spriteBatch)
