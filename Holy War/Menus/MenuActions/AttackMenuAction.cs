@@ -12,7 +12,7 @@ namespace Holy_War.Menus.MenuActions
 
         public override void Execute(UserActorWithStats userActor)
         {
-            userActor.ResetZoneOrigins(userActor.ScreenLocation);
+            userActor.ResetZoneOrigins(userActor.GridLocation);
             userActor.HighlightZone(userActor.AttackZone);
 
             userActor.SetState(UserActorState.Attacking);

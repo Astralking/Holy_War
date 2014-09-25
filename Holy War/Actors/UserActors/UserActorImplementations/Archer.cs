@@ -25,12 +25,13 @@ namespace Holy_War.Actors.UserActors.UserActorImplementations
 				attackType: Enumerations.ActorStats.AttackType.Piercing,
 				armorType: Enumerations.ActorStats.ArmorType.Light,
 				team: team,
-				hp: 10,
+				hp: 6,
+                mp: 4,
 				strength: 3,
-				dexterity: 6,
+				dexterity: 5,
 				intelligence: 5,
 				attackRange: 2,
-				movement: 6);
+				movement: 3);
 		}
 
 		private static List<IMenuAction> GenerateMenuActions()

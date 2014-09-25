@@ -116,7 +116,7 @@ namespace Holy_War
 		        command.Execute(CurrentWorld.SelectedUserActor, gameTime);
 
 		    CurrentWorld.Update(gameTime);
-            Camera.Update(CurrentWorld.SelectedUserActor.ScreenLocation);
+            Camera.Update(CurrentWorld.SelectedUserActor.GridLocation);
 
 			base.Update(gameTime, command, covered);
 		}

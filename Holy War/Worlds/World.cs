@@ -12,6 +12,7 @@ using Holy_War.Enumerations.ActorStats;
 using Holy_War.Managers;
 using Holy_War.Menus.MenuActions;
 using Holy_War.Overlay.Overlays;
+using Holy_War.Overlay.Overlays.DamageOverlay;
 using Holy_War.Tiles;
 using Holy_War.Tiles.Terrain;
 using Microsoft.Win32;
@@ -47,9 +48,25 @@ namespace Holy_War.Worlds
 			DamageOverlay = new DamageOverlay();
         }
 
+        public List<IUserActor> GetActorsInArea(Point gridLocation, int size)
+        {
+            var userActorList = new List<IUserActor>();
+
+            for (int i = gridLocation.X - size; i < gridLocation.X + size; i++)
+            {
+                for (int j = gridLocation.Y - size; j < gridLocation.X + size; j++)
+                {
+                    if(i >= 0 && j >= 0)
+                        userActorList.Add(GroundMapArray[i, j]);
+                }
+            }
+
+            return userActorList;
+        }
+
         public void SelectUserActorAtSelectionBox()
         {
-            var actorToSelect = GroundMapArray[SelectionBox.ScreenLocation.X, SelectionBox.ScreenLocation.Y];
+            var actorToSelect = GroundMapArray[SelectionBox.GridLocation.X, SelectionBox.GridLocation.Y];
 
             if (actorToSelect != null && IsCurrentlySelectableUserActor(actorToSelect))
             {
@@ -69,7 +86,7 @@ namespace Holy_War.Worlds
         public void SelectSelectionBox()
         {
             if (SelectedUserActor != null)
-                SelectionBox.SetScreenLocation(SelectedUserActor.ScreenLocation);
+                SelectionBox.SetScreenLocation(SelectedUserActor.GridLocation);
 
 	        SelectedUserActor = SelectionBox;
             SetSelectionBoxVisibile(true);
@@ -102,6 +119,7 @@ namespace Holy_War.Worlds
 
             TurnTracker.Draw(spriteBatch);
 			ActorStatusOverlay.Draw(spriteBatch);
+            DamageOverlay.Draw(spriteBatch);
             SelectionBox.Draw(spriteBatch);
         }
 
@@ -113,6 +131,7 @@ namespace Holy_War.Worlds
                 .ToList();
 
             TurnTracker.Update(gameTime);
+            DamageOverlay.Update(gameTime);
 			SelectedUserActor.Update(gameTime);
 
             if (!actors.Any(actor => actor.Updated))
@@ -177,29 +196,29 @@ namespace Holy_War.Worlds
                     TerrainMapArray[i, j] = new Grassland(
                         SpriteManager.Textures["Terrain/GrassTile/GrassTile"],
                         new Point(i, j),
-						2f);
+						1.5f);
                 }
             }
         }
 
         private void InitialiseActors()
         {
-			int x = 5, y = 5;
+			int x = 0, y = 0;
 
-            //GroundMapArray[x, y] = UserActorFactory.Create("Monk", Team.Blue, new Point(x++, y));
-            //GroundMapArray[x, y] = UserActorFactory.Create("Warrior", Team.Blue, new Point(x++, y));
+            GroundMapArray[x, y] = UserActorFactory.Create("Monk", Team.Blue, new Point(x++, y));
+            GroundMapArray[x, y] = UserActorFactory.Create("Warrior", Team.Blue, new Point(x++, y));
             GroundMapArray[x, y] = UserActorFactory.Create("Archer", Team.Blue, new Point(x++, y));
-            //GroundMapArray[x, y] = UserActorFactory.Create("Sorcerer", Team.Blue, new Point(x++, y));
-            //GroundMapArray[x, y] = UserActorFactory.Create("Assassin", Team.Blue, new Point(x++, y));
+            GroundMapArray[x, y] = UserActorFactory.Create("Sorcerer", Team.Blue, new Point(x++, y));
+            GroundMapArray[x, y] = UserActorFactory.Create("Assassin", Team.Blue, new Point(x++, y));
 
-            //x = 0;
-            //y = 5;
+            x = 0;
+            y = 4;
 
-            //GroundMapArray[x, y] = UserActorFactory.Create("Monk", Team.Red, new Point(x++, y));
-            //GroundMapArray[x, y] = UserActorFactory.Create("Warrior", Team.Red, new Point(x++, y));
+            GroundMapArray[x, y] = UserActorFactory.Create("Monk", Team.Red, new Point(x++, y));
+            GroundMapArray[x, y] = UserActorFactory.Create("Warrior", Team.Red, new Point(x++, y));
             GroundMapArray[x, y] = UserActorFactory.Create("Archer", Team.Red, new Point(x++, y));
-            //GroundMapArray[x, y] = UserActorFactory.Create("Sorcerer", Team.Red, new Point(x++, y));
-            //GroundMapArray[x, y] = UserActorFactory.Create("Assassin", Team.Red, new Point(x++, y));
+            GroundMapArray[x, y] = UserActorFactory.Create("Sorcerer", Team.Red, new Point(x++, y));
+            GroundMapArray[x, y] = UserActorFactory.Create("Assassin", Team.Red, new Point(x++, y));
         }
 
         private void DrawGround(SpriteBatch spriteBatch)
@@ -237,12 +256,12 @@ namespace Holy_War.Worlds
                 return;
 
             GroundMapArray[tile.SavedGridLocation.X, tile.SavedGridLocation.Y] = null;
-			GroundMapArray[userActor.ScreenLocation.X, userActor.ScreenLocation.Y] = userActor;
+			GroundMapArray[userActor.GridLocation.X, userActor.GridLocation.Y] = userActor;
         }
 
         private void RemoveTileInArray(IUserActor userActor)
         {
-            GroundMapArray[userActor.ScreenLocation.X, userActor.ScreenLocation.Y] = null;
+            GroundMapArray[userActor.GridLocation.X, userActor.GridLocation.Y] = null;
         }
 
         private bool IsCurrentlySelectableUserActor(IUserActor userActor)

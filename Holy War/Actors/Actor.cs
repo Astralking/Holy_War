@@ -10,8 +10,6 @@ namespace Holy_War.Actors
 {
 	public abstract class Actor : Tile
 	{
-	    private float _transparency = 1f;
-
 		protected Actor(Texture2D texture, Point location, Layer layer)
             : base(texture, location, layer)
 		{

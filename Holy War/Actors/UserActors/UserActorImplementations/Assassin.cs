@@ -26,11 +26,12 @@ namespace Holy_War.Actors.UserActors.UserActorImplementations
 				armorType: Enumerations.ActorStats.ArmorType.Light,
 				team: team,
 				hp: 8,
+                mp: 4,
 				strength: 3,
-				dexterity: 8,
+				dexterity: 6,
 				intelligence: 4,
 				attackRange: 1,
-				movement: 3);
+				movement: 4);
 		}
 
 		private static List<IMenuAction> GenerateMenuActions()

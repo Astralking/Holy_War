@@ -29,6 +29,11 @@ namespace Holy_War.Zones
 
         public virtual void ResetOrigin(Point newOrigin)
         {
+            foreach (var highlightTile in Grid)
+            {
+                if(highlightTile != null)
+                    highlightTile.Reset();
+            }
         }
 
         public virtual void CalculateGrid(int x, int y)

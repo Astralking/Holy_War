@@ -2,12 +2,12 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Holy_War.Actors.UserActors
+namespace Holy_War.Actors.UserActors.BoxActors
 {
     public class UserActor : Actor
     {
         public Point StartingPosition { get; private set; }
-        public Point ScreenLocation { get { return base.ScreenLocation; } }
+        public Point GridLocation { get { return base.ScreenLocation; } }
 	    private bool _turnLocked;
 
         public bool TurnLocked
@@ -42,13 +42,13 @@ namespace Holy_War.Actors.UserActors
             StartingPosition = location;
         }
 
-		public virtual void Update(GameTime gameTime)
+		public override void Update(GameTime gameTime)
 		{
 		}
 
         public override void Move(Point direction, GameTime gameTime)
         {
-            SetScreenLocation(ScreenLocation + direction);
+            SetScreenLocation(GridLocation + direction);
         }
 
         public override void Action()
@@ -68,7 +68,7 @@ namespace Holy_War.Actors.UserActors
 
         public void UpdateStartPosition()
         {
-            StartingPosition = ScreenLocation;
+            StartingPosition = GridLocation;
         }
     }
 }

@@ -26,6 +26,18 @@ namespace Holy_War.Zones
                 highlightTile.Draw(spriteBatch);
         }
 
+        public void Update(GameTime gameTime)
+        {
+            for (var i = 0; i < Grid.GetLength(0); i++)
+            {
+                for (var j = 0; j < Grid.GetLength(1); j++)
+                {                 
+                    if (Grid[i, j] != null && Grid[i, j].Animating)
+                        Grid[i, j].Update(gameTime);
+                }
+            }
+        }
+
         public override void ResetOrigin(Point newOrigin)
         {
             CalculateGrid(newOrigin.X, newOrigin.Y);
@@ -34,26 +46,6 @@ namespace Holy_War.Zones
         public override void CalculateGrid(int originX, int originY)
         {
             ResetGrid();
-
-            //for (var i = originX - _distance; i <= originX + _distance; ++i)
-            //{
-            //    for (var j = originY - _distance; j <= originY + _distance; ++j)
-            //    {
-            //        if (i < 0 || j < 0 || i >= GameScreen.CurrentWorld.WidthInTiles || j >= GameScreen.CurrentWorld.HeightInTiles) 
-            //            continue;
-
-            //        if (Math.Abs(originX - i) + Math.Abs(originY - j) > _distance) 
-            //            continue;
-
-            //        if (i == originX && j == originY) 
-            //            continue;
-
-            //        Grid[i, j] = new HighlightTile(
-            //            SpriteManager.Textures["Boxes/BlueHighlightBox"],
-            //            new Point(i, j), 
-            //            Layer.Zones);
-            //    }
-            //}
 
             var graph = DijkstrasAlgorithm.GenerateZone(new Point(originX, originY), Distance);
             

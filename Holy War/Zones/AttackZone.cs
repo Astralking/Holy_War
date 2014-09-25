@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Holy_War.Actors.UserActors.BoxActors;
+using Holy_War.Algorithms;
 using Holy_War.Enumerations;
 using Holy_War.Managers;
 using Holy_War.Tiles;
@@ -18,7 +19,7 @@ namespace Holy_War.Zones
             Initialise(origin.X, origin.Y);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             foreach (var highlightTile in Grid
                 .Cast<HighlightTile>()
@@ -27,32 +28,40 @@ namespace Holy_War.Zones
                 highlightTile.Draw(spriteBatch);
         }
 
+        public void Update(GameTime gameTime)
+        {
+            for (var i = 0; i < Grid.GetLength(0); i++)
+            {
+                for (var j = 0; j < Grid.GetLength(1); j++)
+                {
+                    if (Grid[i, j] != null && Grid[i, j].Animating)
+                        Grid[i, j].Update(gameTime);
+                }
+            }
+        }
+
         public override void ResetOrigin(Point newOrigin)
         {
             CalculateGrid(newOrigin.X, newOrigin.Y);
+
+            base.ResetOrigin(newOrigin);
         }
 
-        public override void CalculateGrid(int x, int y)
+        public override void CalculateGrid(int originX, int originY)
         {
             ResetGrid();
 
-            for (var i = x - _distance; i <= x + _distance; ++i)
+            var intGrid = ManhattenDistanceAlgorithm.GenerateGrid(originX, originY, Distance);
+
+            for (int i = 0; i < intGrid.GetLength(0); i++)
             {
-                for (var j = y - _distance; j <= y + _distance; ++j)
+                for (int j = 0; j < intGrid.GetLength(1); j++)
                 {
-                    if (i < 0 || j < 0 || i >= GameScreen.CurrentWorld.WidthInTiles || j >= GameScreen.CurrentWorld.HeightInTiles)
-                        continue;
-
-                    if (Math.Abs(x - i) + Math.Abs(y - j) > _distance)
-                        continue;
-
-                    if (i == x && j == y)
-                        continue;
-
-                    Grid[i, j] = new HighlightTile(
-                        SpriteManager.Textures["Boxes/RedHighlightBox"],
-                        new Point(i, j),
-                        Layer.Zones);
+                    if(intGrid[i,j] == 1)
+                        Grid[i, j] = new HighlightTile(
+                            SpriteManager.Textures["Boxes/RedHighlightBox"],
+                            new Point(i, j),
+                            Layer.Zones);
                 }
             }
         }

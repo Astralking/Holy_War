@@ -26,6 +26,7 @@ namespace Holy_War.Actors.UserActors.UserActorImplementations
 				armorType: Enumerations.ActorStats.ArmorType.None,
 				team: team,
 				hp: 6,
+                mp: 8,
 				strength: 3,
 				dexterity: 4,
 				intelligence: 8,

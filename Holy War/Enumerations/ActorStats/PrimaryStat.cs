@@ -7,9 +7,13 @@ namespace Holy_War.Enumerations.ActorStats
 {
     public enum PrimaryStat
     {
+        Primary,
         Strength,
         Dexterity,
-        Intelligence
+        Intelligence,
+        Movement,
+        Hp,
+        Mp
     }
 
     public static partial class Extensions

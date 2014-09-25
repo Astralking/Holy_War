@@ -14,6 +14,7 @@ namespace Holy_War.Tiles
         internal Point _location;
 	    internal Point _newGridLocation;
         internal Point _savedGridLocation;
+	    internal float _transparency = 1f;
 
 	    internal virtual Point ScreenLocation
 	    {
@@ -29,6 +30,8 @@ namespace Holy_War.Tiles
 	            }
 	        }
 	    }
+
+        internal bool Animating { get; set; }
 
         public Point SavedGridLocation { get { return _savedGridLocation; } }
 
@@ -49,5 +52,6 @@ namespace Holy_War.Tiles
         }
 
 	    public abstract void Draw(SpriteBatch spriteBatch);
+	    public abstract void Update(GameTime gametime);
 	}
 }

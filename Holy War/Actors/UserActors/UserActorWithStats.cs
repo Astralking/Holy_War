@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Holy_War.Actors.Stats;
 using Holy_War.Actors.UserActors.BoxActors;
 using Holy_War.Enumerations;
 using Holy_War.Enumerations.ActorStats;
+using Holy_War.Events;
 using Holy_War.Helpers;
 using Holy_War.Managers;
 using Holy_War.Menus.ContextMenus;
@@ -26,6 +28,8 @@ namespace Holy_War.Actors.UserActors
         public IZone MovementZone { get; private set; }
         public IZone AttackZone { get; private set; }
 
+        public EventHandler<OnDamageEventArgs> OnDamage;
+
         public UserActorWithStats(List<IMenuAction> menuActions, ActorStats stats, Texture2D texture, Point location, Layer layer)
             : base(texture, location, layer)
         {
@@ -36,9 +40,11 @@ namespace Holy_War.Actors.UserActors
             MovementZone = new MovementZone(stats.Movement, location);
             AttackZone = new AttackZone(stats.AttackRange, location);
 
-			TargetBoxActor = new BoxActors.TargetBoxActor(
+            OnDamage += GameScreen.CurrentWorld.DamageOverlay.OnDamage;
+
+			TargetBoxActor = new TargetBoxActor(
 				SpriteManager.Textures["Boxes/TargetBox"],
-				ScreenLocation,
+				GridLocation,
 				Layer.Zones);
         }
 
@@ -67,7 +73,7 @@ namespace Holy_War.Actors.UserActors
 			if (TargetBoxActor != null && TargetBoxActor.Visible)
 				TargetBoxActor.Update(gameTime);
 
-			base.Update(gameTime);
+            _activeZone.Update(gameTime);
 		}
 
         public override void Move(Point direction, GameTime gameTime)
@@ -75,12 +81,12 @@ namespace Holy_War.Actors.UserActors
             switch (_state)
             {
                 case UserActorState.Moving:
-                    if (ScreenLocation + direction == StartingPosition || MovementZone.PositionIsInZone(ScreenLocation + direction))
-                        SetScreenLocation(ScreenLocation + direction);
+                    if (GridLocation + direction == StartingPosition || MovementZone.PositionIsInZone(GridLocation + direction))
+                        SetScreenLocation(GridLocation + direction);
                     break;
                 case UserActorState.Attacking:
-                    if (TargetBoxActor.ScreenLocation + direction == TargetBoxActor.StartingPosition || AttackZone.PositionIsInZone(TargetBoxActor.ScreenLocation + direction))
-                        TargetBoxActor.SetScreenLocation(TargetBoxActor.ScreenLocation + direction);
+                    if (TargetBoxActor.GridLocation + direction == TargetBoxActor.StartingPosition || AttackZone.PositionIsInZone(TargetBoxActor.GridLocation + direction))
+                        TargetBoxActor.SetScreenLocation(TargetBoxActor.GridLocation + direction);
                     break;
                 case UserActorState.ContextMenu:
                     _contextMenu.Move(direction, gameTime);
@@ -110,11 +116,14 @@ namespace Holy_War.Actors.UserActors
                     {
                         var userActorToAttack =
                             GameScreen.CurrentWorld.GroundMapArray[
-                                TargetBoxActor.ScreenLocation.X, TargetBoxActor.ScreenLocation.Y] as UserActorWithStats;
+                                TargetBoxActor.GridLocation.X, TargetBoxActor.GridLocation.Y] as UserActorWithStats;
 
                         if (userActorToAttack != null)
                         {
-                            Attack(userActorToAttack);
+                            var damageCaused = Attack(userActorToAttack);
+
+                            OnDamage(this, new OnDamageEventArgs(userActorToAttack.GridLocation, damageCaused));
+
                             EndTurn();
                         }
                     }
@@ -147,8 +156,8 @@ namespace Holy_War.Actors.UserActors
 
         private bool IsValidPosition()
         {
-            return ScreenLocation == StartingPosition || 
-                   GameScreen.CurrentWorld.GroundMapArray[ScreenLocation.X, ScreenLocation.Y] == null;
+            return GridLocation == StartingPosition || 
+                   GameScreen.CurrentWorld.GroundMapArray[GridLocation.X, GridLocation.Y] == null;
         }
 
         public void HighlightZone(IZone zone)
@@ -165,7 +174,7 @@ namespace Holy_War.Actors.UserActors
                 case UserActorState.Moving:
                     break;
                 case UserActorState.Attacking:
-					TargetBoxActor.SetScreenLocation(ScreenLocation);
+					TargetBoxActor.SetScreenLocation(GridLocation);
 					TargetBoxActor.Visible = true;
                     break;
                 case UserActorState.ContextMenu:
@@ -183,7 +192,7 @@ namespace Holy_War.Actors.UserActors
 				TargetBoxActor.Visible = false;
 
             HighlightZone(null);
-            ResetZoneOrigins(ScreenLocation);
+            ResetZoneOrigins(GridLocation);
             UpdateStartPosition();
 
             GameScreen.CurrentWorld.SelectSelectionBox();
@@ -192,7 +201,7 @@ namespace Holy_War.Actors.UserActors
         private void ShowContextMenu()
         {
             if (_contextMenu == null)
-                _contextMenu = ContextMenuFactory.CreateContextMenu(_menuActions, Converter.PointToVector(ScreenLocation));
+                _contextMenu = ContextMenuFactory.CreateContextMenu(_menuActions, Converter.PointToVector(GridLocation));
 
             SetState(UserActorState.ContextMenu);
         }

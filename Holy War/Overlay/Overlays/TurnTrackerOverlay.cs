@@ -73,26 +73,26 @@ namespace Holy_War.Overlay.Overlays
 
 		public override void Update(GameTime gameTime)
 		{
-			if (_textToDisplayQueue.Any() && !String.IsNullOrEmpty(_textToDisplayQueue.Peek()))
-			{
-				_mFadeDelay -= gameTime.ElapsedGameTime.TotalSeconds;
+		    if (!_textToDisplayQueue.Any() || String.IsNullOrEmpty(_textToDisplayQueue.Peek())) 
+                return;
 
-				if (_mFadeDelay <= 0)
-				{
-					_mFadeDelay = .035;
+		    _mFadeDelay -= gameTime.ElapsedGameTime.TotalSeconds;
 
-					_mAlphaValue += _mFadeIncrement;
+		    if (_mFadeDelay <= 0)
+		    {
+		        _mFadeDelay = .035;
 
-					if (_mAlphaValue >= 1.5f)
-						_mFadeIncrement *= -1;
+		        _mAlphaValue += _mFadeIncrement;
 
-					if (_mAlphaValue <= 0)
-					{
-						_mFadeIncrement *= -1;
-						_textToDisplayQueue.Dequeue();
-					}
-				}
-			}
+		        if (_mAlphaValue >= 1.5f)
+		            _mFadeIncrement *= -1;
+
+		        if (_mAlphaValue <= 0)
+		        {
+		            _mFadeIncrement *= -1;
+		            _textToDisplayQueue.Dequeue();
+		        }
+		    }
 		}
     }
 }

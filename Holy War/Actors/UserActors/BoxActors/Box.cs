@@ -37,7 +37,7 @@ namespace Holy_War.Actors.UserActors.BoxActors
 		{
 			if (_visible)
 			{
-				var locationInPixels = Converter.GetLocationInPixels(ScreenLocation);
+				var locationInPixels = Converter.GetLocationInPixels(GridLocation);
 
 				spriteBatch.Draw(Texture,
 					locationInPixels,
@@ -51,14 +51,16 @@ namespace Holy_War.Actors.UserActors.BoxActors
 			}
 		}
 
-		public virtual void Update(GameTime gameTime)
+		public override void Update(GameTime gameTime)
 		{
-			var highlightedActor = GameScreen.CurrentWorld.GroundMapArray[ScreenLocation.X, ScreenLocation.Y] as UserActorWithStats;
+			var highlightedActor = GameScreen.CurrentWorld.GroundMapArray[GridLocation.X, GridLocation.Y] as UserActorWithStats;
 
 			if (highlightedActor != null)
 				OnHighlight(highlightedActor, new OnHighlightEventArgs(highlightedActor.Stats));
 			else
 				OnHighlight(null, new OnHighlightEventArgs(null));
+
+            base.Update(gameTime);
 		}
 
 		protected virtual void OnHighlighted(OnHighlightEventArgs e)

@@ -22,9 +22,14 @@ namespace Holy_War.Menus.ContextMenus
         {
             var positionInPixels = Converter.GetLocationInPixels(position);
 
+            ConstructMenu(extendableMenuSectionList, positionInPixels);         
+        }
+
+        private void ConstructMenu(List<MenuActionSection> extendableMenuSectionList, Vector2 positionInPixels)
+        {
             _topSection = new MenuSection(SpriteManager.Textures["Menus/ContextMenu/ContextMenuTop"], positionInPixels, Layer.Master, 27f, 200f);
             positionInPixels += new Vector2(0, 27f);
-            
+
             _menuActionSections = extendableMenuSectionList;
 
             foreach (var menuActionSection in _menuActionSections)
@@ -32,6 +37,7 @@ namespace Holy_War.Menus.ContextMenus
                 menuActionSection.UpdatePositionByPixels(positionInPixels);
                 positionInPixels += new Vector2(0, menuActionSection.Height);
             }
+
             _menuActionSections[SelectedIndex].Select();
 
             _bottomSection = new MenuSection(SpriteManager.Textures["Menus/ContextMenu/ContextMenuBottom"], positionInPixels, Layer.Master, 28f, 200f);

@@ -44,14 +44,14 @@ namespace Holy_War.Helpers
            return (int)Math.Round(coord / (float) Tile.GetDefaultTileWidth()) * Tile.GetDefaultTileWidth();
         }
 
-        public static int TileWidthToPixels(int tileNumber)
+        public static int TileWidthToPixels(int coord)
         {
-            return tileNumber * Tile.GetDefaultTileWidth();
+            return coord * Tile.GetDefaultTileWidth();
         }
 
-        public static int TileHeightToPixels(int tileNumber)
+        public static int TileHeightToPixels(int coord)
         {
-            return tileNumber * Tile.GetDefaultTileHeight();
+            return coord * Tile.GetDefaultTileHeight();
         }
 
         public static int PixelWidthToTile(int coord)

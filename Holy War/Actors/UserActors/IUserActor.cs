@@ -11,7 +11,7 @@ namespace Holy_War.Actors.UserActors
 	    void Move(Point direction, GameTime gameTime);
 	    bool TurnLocked { get; set; }
         bool Updated { get; set; }
-        Point ScreenLocation { get; }
+        Point GridLocation { get; }
 		Team Team { get; }
 		void Draw(SpriteBatch spriteBatch);
 		void Update(GameTime gameTime);

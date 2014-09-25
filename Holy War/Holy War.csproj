@@ -47,8 +47,9 @@
     <Compile Include="Actors\UserActors\UserActorImplementations\Sorcerer.cs" />
     <Compile Include="Actors\UserActors\UserActorImplementations\Archer.cs" />
     <Compile Include="Actors\UserActors\UserActorImplementations\Warrior.cs" />
-    <Compile Include="Actors\UserActors\UserActorWithZones.cs" />
+    <Compile Include="Actors\UserActors\UserActorWithStats.cs" />
     <Compile Include="Algorithms\DijkstrasAlgorithm.cs" />
+    <Compile Include="Algorithms\ManhattenDistanceAlgorithm.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="Enumerations\ActorStats\ArmorType.cs" />
     <Compile Include="Enumerations\ActorStats\AttackType.cs" />
@@ -57,7 +58,7 @@
     <Compile Include="Enumerations\ScreenState.cs" />
     <Compile Include="Enumerations\Team.cs" />
     <Compile Include="Enumerations\UserActorState.cs" />
-    <Compile Include="Events\OnAttackEventArgs.cs" />
+    <Compile Include="Events\OnDamageEventArgs.cs" />
     <Compile Include="Events\OnHighlightEventArgs.cs" />
     <Compile Include="Input\IInputHandler.cs" />
     <Compile Include="Menus\ContextMenus\ContextMenuFactory.cs" />
@@ -66,13 +67,16 @@
     <Compile Include="MainGame.cs" />
     <Compile Include="Menus\ContextMenus\ContextMenu.cs" />
     <Compile Include="Menus\MenuActionSection.cs" />
+    <Compile Include="Menus\MenuActions\AbilityMenuActions\AbilityMenuAction.cs" />
+    <Compile Include="Menus\MenuActions\AbilityMenuActions\Warrior\BattlecryAbilityMenuAction.cs" />
     <Compile Include="Menus\MenuActions\AttackMenuAction.cs" />
     <Compile Include="Menus\MenuActions\EndTurnMenuAction.cs" />
     <Compile Include="Menus\MenuActions\IMenuAction.cs" />
     <Compile Include="Menus\MenuActions\MenuAction.cs" />
     <Compile Include="Menus\MenuSection.cs" />
-    <Compile Include="Overlay\Overlays\DamageOverlay.cs" />
+    <Compile Include="Overlay\Overlays\DamageOverlay\DamageOverlay.cs" />
     <Compile Include="Overlay\Overlays\ActorStatusOverlay.cs" />
+    <Compile Include="Overlay\Overlays\DamageOverlay\DamageValue.cs" />
     <Compile Include="Screens\GameScreen.cs" />
     <Compile Include="Enumerations\Layer.cs" />
     <Compile Include="Enumerations\Orientation.cs" />
@@ -120,6 +124,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Actors\NonUserActors\" />
+    <Folder Include="Animation\" />
+    <Folder Include="Menus\MenuActions\AbilityMenuActions\Archer\" />
+    <Folder Include="Menus\MenuActions\AbilityMenuActions\Assassin\" />
+    <Folder Include="Menus\MenuActions\AbilityMenuActions\Monk\" />
+    <Folder Include="Menus\MenuActions\AbilityMenuActions\Sorcerer\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Content\Content\Content.csproj">

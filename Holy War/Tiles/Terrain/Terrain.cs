@@ -21,5 +21,10 @@ namespace Holy_War.Tiles.Terrain
 		public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
 		{
 		}
+
+	    public override void Update(GameTime gamtime)
+	    {
+	        throw new NotImplementedException();
+	    }
 	}
 }

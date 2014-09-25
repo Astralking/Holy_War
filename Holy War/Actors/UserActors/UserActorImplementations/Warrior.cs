@@ -3,6 +3,7 @@ using Holy_War.Actors.Stats;
 using Holy_War.Enumerations;
 using Holy_War.Managers;
 using Holy_War.Menus.MenuActions;
+using Holy_War.Menus.MenuActions.AbilityMenuActions.Warrior;
 using Microsoft.Xna.Framework;
 
 namespace Holy_War.Actors.UserActors.UserActorImplementations
@@ -25,7 +26,8 @@ namespace Holy_War.Actors.UserActors.UserActorImplementations
 				attackType: Enumerations.ActorStats.AttackType.Slashing,
 				armorType: Enumerations.ActorStats.ArmorType.Medium,
 				team: team,
-				hp: 12,
+				hp: 10,
+                mp: 3,
 				strength: 7,
 				dexterity: 3,
 				intelligence: 3,
@@ -38,10 +40,16 @@ namespace Holy_War.Actors.UserActors.UserActorImplementations
 			return new List<IMenuAction>
             {
                 new EndTurnMenuAction("End Turn"),
+                new BattlecryAbilityMenuAction("Battlecry"),
                 new AttackMenuAction("Attack")
             };
 		}
 
-		public Team Team { get { return Stats.Team; } }
+        public override void Action()
+        {
+            base.Action();
+        }
+
+        public Team Team { get { return Stats.Team; } }
     }
 }
